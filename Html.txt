@@ -1,0 +1,15 @@
+Some ADA rules:-
+	
+	-> Full form - Americans with Disabilities Act(ADA)
+	-> Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.
+
+	1)input sathe label hammesha use karvu..jo koi content n hoy to display : none rakhvu
+	2)img tag sathe hammesha alt tag use karvo and ema koi meanigfull name aapvu
+	3)anchor and button tag sathe title tag no use karvo
+	4)section wise h2 to h6 ne descending order(h2>h3>...>h6) ma use karva.
+	5)p tag ma class n aapvo tene koi target thi css karvi
+	6)Header,Footer and sidebar ma Heading tag (h1 to h6) no use n karvo..jo title avtu hoy to div ma class lay ne ene css aapvi
+
+	7) Do not use heading tags for Header, Footer, Menu and Sidebar
+	8) Do not use heading tag in Related Post section
+	9) Do not use heading in FAQ section"

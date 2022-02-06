@@ -1,0 +1,1489 @@
+*Commands* :
+
+->npm install -g @angular/cli@latest :
+	
+	->Commands for install Angular CLI
+
+->ng new my-dream-app :
+	
+	->Commands for built new application
+
+->cd my-dream-app :
+	
+	->to go inside of our project folder
+
+ng serve (to run application) OR
+ng serve --open (for direct compile and run the application) OR
+ng serve -o OR
+ng serve --host 192.168.11.12 (for run application using ip instead of port number...so it can also run on other pc) OR
+ng serve --port 4401 (for run angular app with another port number...to run more than one angular app in one pc ) OR
+ng serve --host 192.168.11.12 --port 4401 (for run angular app using ip address and different port number)
+
+code . (for direct open the application into code editor)
+
+->ng lint :
+
+	->To check the codind standard of our code.
+	->rules are listed in tslint.json file.
+
+->ng build :	
+	
+	->when we run this command it create the dist folder.
+	->which it sufficient to deploy our app. into external server or other environment. 
+	->we don't need any other file, we just pick the dist folder.
+
+->ng test :
+	
+	->used for unit testing
+	->this command test one module at a time
+	->unit test for angular are written in framework called Jasmine.
+	->And to run the unit test angular use the Karma.
+	->Karma is a test runner for JavaScript that runs on Node.js.
+
+->ng e2e :
+	
+	->end to end testing
+	->it test entire app at a time
+
+->npm install 'package_name' ..to install perticular package
+->npm uninstall 'package_name' ..to uninstall perticular package
+
+
+* vulnarebility vali error ave to aa code run karvo * :
+
+	delete node_modules
+	delete package-lock.json,
+	run-> npm --depth 9999 update
+	run-> npm install
+
+
+* Source map file *	
+	
+	->Basically is a file which hold the information about our original files.
+	->aapde jyare koi pn application ne build kriye tyare teni bdhi files ne minified kriye chiye jenathi file size ochi thay che ane application speed thi run thay che. But application ma koi error aavse to minified file ma debug karvu thodu muskel che jethi tena solution mate aapde minified fileni sathe .map file pn generate kriye chiye j aapdi original file no data store kre che ane error hoy to kai file ma kai line pr che t exact show kre che.
+	->.map file css and js banne mate generate kri sakiye chiye.
+
+* Minification *	
+	
+	->It just removing unnecesary whitespace.
+
+* Uglification *	
+	
+	->It simply means that coverting the code in such a format that core logic can't be easily understand.
+	->It rename the variable and their reference.
+
+		ex.- 
+		before: self.comment = 'hello'
+				function(self.comment){}
+
+		after: k.comment = 'hello'
+			   function(k.comment){}
+
+
+* To update Angular project * :
+
+	->First update the latest version of you current version
+
+		ng update @angular/cli@8 @angular/core@8 
+
+			where, 8 = your current angular version
+
+	->Then update to angular latest version
+
+		ng update @angular/cli @angular/core		
+
+
+* Tree shaking *
+	
+	->It simply means that unused code is not included in a bundle during the build process and make overall bundle smaller.
+
+
+* Ivy Compiler *
+	
+	->In older version of angular(Angular4 to 8) we used rendering architecture called view engine.
+	->It has some limitations like, no-tree shaking, it compile all library at every compile time, etc.
+	->From Angular9 google team introduce the Ivy compiler.
+	->In earlier version if we simply write a 'hello world' program and develop it. still the bundle size is more than 10kb.
+	->so using Ivy the bundle size is reduced, the application load speedly in browser and run fast.
+
+
+* Varialbe in Angular *
+	
+	1) Normal Variable :
+
+		->syntax :
+
+		test: any = "Hello";
+
+			where, test = variable name,
+				   any(optional) = variable type(datatype) (ex. - string, boolean, etc.)
+				   Hello = value
+
+		->Now we can use *test* variable in our component template(html) file.
+		->If we have to use this variable in any *function* than we have use *this* keyword with it : ex.-
+
+			Admin(){
+				console.log(this.test);
+			}
+
+		-> The default datatype of varibale in angular is *any*.
+		-> The datatype can be a 2 type : 
+
+			i) Primitive type:  ex. number,string,boolean.
+
+			ii) Reference type: ex. Class,Interface,Array
+
+		-> Basically there are three stages in variable : 
+
+			i) Variable Declaration :  ex.  variable : datatype;
+
+			ii) Variable Assignment :  ex.  test : value;
+
+			iii) Variable Initialization :  It is the combination of above two part. In this we assign value at the same time of Declaration
+
+				ex.  value : datatype = value;
+
+
+
+	2) Template Reference Variable :
+
+		-> ex. https://www.youtube.com/watch?v=c0NWWak6Tls&list=PL_qizAfcpJ-NsD2_46FOYIJAi68tIRFTU&index=3
+
+		->Template Reference Variable are those variable which we can define into our template file:
+		->There are two way to define Template Reference Variable :
+
+		-> How to get Template Reference Variable?
+
+			i) using # sign
+
+				ex. -
+
+					<input type = "text" value = "hello" #example>
+					<div> {{ example.type + " " + example.value }} </div>
+
+						where, example = Template Reference Variable
+
+						op/ text hello
+
+			i) using ref- sign
+
+				ex. -
+
+					<input type = "text" value = "hello" ref-example>
+					<div> {{ example.type + " " + example.value }} </div>
+
+						where, example = Template Reference Variable
+
+						op/ text hello
+
+
+	* Template input variable *
+
+		-> when we create variable with let keyword in angular is called Template input variable. And it only work on that perticular element in which we created it.
+
+		ex. .html file
+
+			<ul>
+				<li *ngFor = "let student of students">{{student.name}}</li>
+			</ul>
+
+			{{student.name}} // it shows an error of undefine
+
+			.ts file
+
+				students : any = [
+					{name: 'Alpesh'},
+					{name: 'Baraiya'},
+				]
+
+
+	* Template Reference Variable with @ViewChild() *: 
+
+		-> ViewChild is used for component communication in angular. If a parent component wants to access child component then it uses ViewChild.
+		-> The template refrence will be passed in @ViewChild as an argument. In this way component will be able to change the appearance and behaviour of element of given templte variable.
+
+		ex.-
+
+			.html file
+
+				<input type="text" #name> 
+				<input type="text" #state> 
+
+			.ts file
+
+				import {ViewChild, ElementRef, AfterViewInit} from '@angular/core'
+
+				export class AppComponent implements OnInit, AfterViewInit {
+
+					@ViewChild('name') elname: ElementRef;
+					@ViewChild('state') elstate: ElementRef;
+
+					ngAfterViewInit(){
+						this.elname.nativeElement.style.color = 'red';
+						this.elstate.nativeElement.style.color = 'green';
+					}
+
+				}
+
+
+
+* Constructor vs ngOnInit *
+	
+	Constructor: 
+
+		-> Constructors are not an specific angular part(is not belong to the angular life cycle hooks) but it is derived from an OOPC concept.	
+		-> The constructor creates an instanse of the component class.
+		-> Constructor called first time before the ngOnInit(or before fire the life cycle hooks).
+		-> We must need Constructor to use dependency injection. (ngOnInit ma call karsu to error show karse)
+
+		ex. import {Router} from '@angular/router';
+
+			export class AppComponent{
+
+				constructor(private router: Router){  //ngOnInit ma aa pass karsu to error avse (A parameter property is only allowed in a constructor)
+
+				}
+
+			}
+
+	ngOnInit:
+
+		-> The ngOnInit function is one of an Angular component life cycle methods.
+		-> The ngOnInit method is called shortly after the component is initilized.
+		-> To use @input @output decorators we must need ngOnInit. (it show undefine if we used it in constructor..km k @input/@output angular na part che and constructor angular no part nthi)
+
+		ex. import {Input} from '@angular/core';
+
+			@Input() person : any; 
+
+			ngOnInit(){
+				console.log(this.person); //constructor ma aa muksu to undefine avse
+			}
+
+
+* Object in Angular *
+		
+	-> An object is an instance which contains set of key value pairs. The values can be string or functions or even array of other objects.
+
+	var object_name = { 
+	   key1: “value1”, //scalar value 
+	   key2: “value”,  
+	   key3: function() {
+	      //functions 
+	   }, 
+	   key4:[“content1”, “content2”] //collection  
+	};
+
+* What is service in angular *
+	
+	-> service is a piece of code that use to perform specific task.
+	-> service contain a value or a function or combination of both.
+	-> service are injected into our component using DI.
+
+	cmd: ng g s service_name
+
+		where g = generate,
+			  s = service
+
+		-> When we create service @Injectable is created in it and one class created in it.
+
+	ex. 
+		.service.ts file
+
+			someMethod(){
+			    return 'Hello!!'
+			}
+
+		.html file
+
+			<p>Hi I am {{something}}</p>
+
+		.ts file
+
+			import { Component} from '@angular/core';
+			import {MyServiceService} from './my-service.service';
+
+			@Component({
+
+			  providers: [MyServiceService]
+
+			})
+			export class AppComponent {
+
+			  constructor(private myService: MyServiceService){}
+
+			  something:any;
+
+			  ngOnInit(){
+			    this.something = this.myService.someMethod();
+			  }
+
+			}
+
+		o/p : Hi I am Hello!!
+
+
+* What is Transpiling angular? *
+	
+	->It just like a compilation process but the big difference is that:
+
+		Compilation: It convert the high level language into machine level language
+		Transpilation: It convert the high level language into another high level language (means angular ma apde typescript ma codding kriye and browser e ny samje etle ama Transpiling process thi TypeScript javascript ma convert thay)
+
+
+* Angular Dependency Injection (DI) *
+	
+	-> apde kyay koi service bnaveli che ene dependency trike laye ane apde ene koi bija component ma use karvi hoy to apde t service ne t component ma inject karvi pde...aa akhi process ne DI kevay
+	-> Dependency Injection is a technique whereby one object supplies the dependencies of another object.
+
+	-> Dependency: is an object that can be used as a service
+	-> Injection: is a process of passing the dependency to a depended object.
+
+	-> ex. jovu
+
+* What is life cycle methods(hooks) of an Angular Component? *	
+	
+	-> practical: https://www.youtube.com/watch?v=qdvGXSUk7Mo
+	
+	-> Life cycle methods(hooks) in angular component allow you to run piece of code at different stages of the life of a component.
+
+	-> There are 8 methods of an angular life cycle hooks:	
+
+		1) ngOnChange:	
+
+			-> It firstly run when component is created and after that it run every time when the @input decorator change.
+			-> It work with an arguments.
+
+		2) ngOnInit:	
+
+			-> It run when component is initilized.
+
+		3) ngDoCheck:	
+
+			-> It run every time when any change is detected in component(like button click, koi property ni value change thay or koi action thay component ma tyare.)
+
+		4) ngAfterContentInit:	
+
+			-> If we used any content with the use of ngContent in component than after the initialization of that code this hooks execute.
+
+		5) ngAfterContentChecked:	
+
+			-> It run every time when any change is detected in ngContent template.
+
+		6) ngAfterViewInit:	
+
+			-> It run after initialization is completed of our component.
+
+		7) ngAfterViewChecked:	
+
+			-> It run after initialization and changes is completed of our component.
+
+		8) ngOnDestroy:	
+
+			-> It run before our component is destroy (DOM mathi remove thta pela)
+
+
+
+
+*Note* :
+	
+	->Angular na version ma je support date aape che e ena mate hoy che k koi version ma koi issue aavyo to aapde ene related quetions angular nu support forum ma puchi sakiye ane angular ni team ene related ans provide kre but jo question puchiye e version ni support date jti rahi to angular ni team tene related koi help ny kre.
+
+	->Mac has terminal
+	->Window has command promt
+
+	->angular.json file ma change karya pasi app faithi run karvi
+
+	->angular nu version or koi package update karva package.json file ma e version change karvu and pasi
+		npm install
+	  command run karvathi package.json file ma j version listed hse e node module folder ma download thay jse ane 
+	  package.lock.json file ma update thay jse
+
+
+*Package listing Details* :
+	
+	i)"11.2.0"(normal) :
+
+		->jo package aa rite listed hse to *npm install* command thi package download karsu tyare exact aa j package download thse
+
+		here 11 is called major part (breaking change)
+			  2 is called minor part (minor change)
+			  0 is called patch part (bug fix)
+
+	ii)"~11.2.0"(using tilde sing) :
+
+		->jo package aa rite listed hse to *npm install* command thi package download karsu tyare *patch* vala part ma koi update hse to ene download karse(means last valo point update kri dese)
+
+	iii)"^11.2.0"(using caret sing) :
+
+		->jo package aa rite listed hse to *npm install* command thi package download karsu tyare jo *minor and patch* version ma koi change hse to e package download thse(means last two point ne update krse)
+
+
+*What is a template in angular ?* :
+
+	-> A template is a HTML view.
+
+*What is the difference between AngularJS and Angular* :
+	
+	=> AngularJS:
+
+		->It is based on MVC architecture
+		->It uses JavaScript to build the application
+		->It does not follow the OOPC concept
+		->We can not do server side codding into it.
+
+	=> Angular:
+
+		->It is based on Service/Controller
+		->It uses TypeScript to build the application
+		->It follow the OOPC concept
+		->We can do server side codding into it.
+
+
+*History of Angular* :
+	
+	->There are two type of coding for application development
+
+		i)Client side(browser ma execute thay)
+		ii)Server side(server ma execute thay)
+
+		->To develop a better client side application google team develop a JavaScript library called AngularJs.
+		->but there are some difficulties in AngularJs, like:
+
+			-It does't communicate server side codding
+			-It does't follow the OOPC concept, etc..
+
+		->To resolve above glitches Angular team introduce a new framework Angular2. which is completly different from AngularJs.
+		->It is based on Typescript.
+		->Aaj rite thoda thoda glitch ne sudharta ane nva feature add karva google dar 6 month ma ek major version release kre che ane dar 3 month ma ek minor version update kre che ane dar week e patch ma update kre che
+	
+	->Angular is a opensource front-end development Javascript framework used for building mobile, dekstop and web application
+
+
+*Development Setup* :
+
+	1)install Node.js (it is not compolsory but, it required if we want to create our app. using commands(npm))
+	2)install Angular CLI (also possible to create app without it but, then we have to create all files manually)
+
+		npm i -g @angular/cli@latest
+
+			where i = install
+				  g = global
+
+	3) create project (project create kriye tyare net on rakhvu jethi jaruri files download thy sake)
+
+		ng new 'app_name'
+
+			->would you like to add angular routing(y/n) : y (enter)
+			->select any css compiler (enter)
+
+*What is Angular CLI (Commans Line Interface)* :
+
+	->It help us to create angular application, component, service and many features using command line. so we can not add it to manually.
+	->It also help in testing, compiling and run the application using cmd.
+
+*Whoud you like to add Angular routing(y/n)?*
+	
+	->y(yes) krine enter karvathi project ma routing.module.ts file create thse ane sathe app.component.ts file ma 
+	<router-outlet></router-outlet> tag add thse
+	->and it is impotant for page ruoting(refresh vagr ek page mathi bija page ma jva)
+
+	ng generate module app-routing --flat --module=app
+
+	where: --module=app is add app-routing into app.module file
+		   --flat is not create folder (ana vagar app-routing nu folder bnavse ane ema import karse)
+
+*Undestanding the angular application all files*
+	
+	1)e2e (end two end) folder :
+
+		->It monitor our application after deployment.
+		means user e kyare login karyu, login karya pasi ketla time mate stay ryo site ma etc.
+
+	2)node module :
+
+		->aapde project create krie tyare jaruri files,packages bdhu aa folder ma download thse
+		->or koi project setup karya pasi 
+
+			npm install
+
+			command run karvathi package.json file ma j pn packages listed hse e bdha aa folder ma download thse
+
+	3)src :
+
+		->this is our main project. we can do code into this folder
+
+	4)main.ts :
+
+		->entry point of our application.
+		->jyare application run thse tyare kai file ne run karse t ama define thyelu hoy
+
+	5)app :
+
+		->koi pn angular app create kriye tema atleast ek module and component file hovi joye. jethi cli thi nvi app. create kriye tyare default ek module,component file create thyeli ave che
+		->hve j pn nva module component create krisu t aa app file ma krisu
+
+	6)environments :
+
+		->when we develop application we want to deploy it in multiple environments ex.- QA, production, test, etc.
+		->All the configuration for this environment go into the environment folder.
+		->aapde kya environment ma work kriye chiye t 
+			main.ts
+		  file ma define thyelu hoy. default development mode hoy and eno msg console ma hse
+		->main.ts file ma 
+			environment.prod
+		  (.prod) add karvathi aapde production mode ma app run kri kevay
+
+	7)assets : 
+
+		->All external files like images,css ne aama generally add karta hoye
+
+	8)pollyfills.ta and browserlist.ts:
+
+		->All browsers has different level of support for any application
+		->means when our typescript code converted into javascript code that code not work same for all browser
+		so, these files would take care of these browsers incompatibility and make sure that whatever code we write would be compatible for all browser
+
+	9)test.ts :
+
+		->Using for testing
+		->is basically the starting point for unit tets.
+
+	10)tsconfig.json :
+
+		->Whatever code we write in typecript need to convert into javascript because browser only understand javascritp
+		->that is specify a part of tsconfig.json
+
+	11).gitignore :
+
+		->when we commite some code and push them to server the files listed in this file are note commited and not pushed to the server
+
+	12)angular.json :
+
+		->This file configure our application
+		->means aa file ma bdhu define hse jm k 
+			app nu name su hse, app no root su hse etc.
+		->plus some commands like,(build,test,etc) listed hse jema aapde external packages(bootstrap,material,etc) ni css and js files define kariye
+
+	13)package.json :
+
+		->There are mainly three things available in package.json
+
+			i)some CLI commands like ng serve, ng build, ng test, ng lint,etc. are listed here (means specify here) and the required files for it is downloaded in node modules folder.
+
+			ii)dependencies : (production version)
+				->the packeges listed here is mandatory for application production version
+				->jyare application build kriye tyare aani andar rahela package no use thay
+
+			iii)devDependences : (development version)
+				->The packages listed here is mandatory for application development version
+				->ama number of listed packages vdhare hoy km k jyare application build kriye tyare testing mate na bdha packages ni pn jarur pde to e bdha ama listed hoy.
+
+		->package.json file ma e bdha packages listes hoy j aapda project ma mandatory hoy but eno meaning e nthi k aa bdha package aapda project ma install hoy(n pn hoy).
+
+	14)package.lock.josn :
+
+		->aa file ma e bdha packages listed hoy e aapda project ma install hoy
+		->aa file ma number of lines vdhare etla mate hoy km k npm install command thi jyare package.json file mana packages download thse tyare t package jo koi bija package pr depend hse to ene pn download krse ne package.lock.json file ma list karse.
+
+
+*What is booting process in angular * OR
+*What is flow of angular application* OR
+*What is architecture of an angular* OR
+*Bootstraping in angular*
+
+	->In this we show that when application is run, how the perticular component getting rendered.
+	 (means angular app jyare run thay tyare kai vastu show thay t)
+
+	->In angular bootstraping two things play a crutial rule :
+
+		i)root module : (module.ts)
+		ii)root component : (app.component.ts)
+
+	->The bootstraping process start from *main.ts* file.
+	->main.ts file ma Appmodule load krelu means imoport krelu hoy ane bootstrap na option ma pn add krelu hoy
+	->Appmodule.ts file Appcomponent ne bootstrap krelu hoy ane appcomponent ni .ts file ma selector hoy che 'app-root' j index.html file ma add thyelo hoy che
+	->aam anuglar app jyare run thay tyare app.component.html file run thay che
+
+
+*Module in Angular* :
+
+	ng g m module_name
+
+		where g = generate,
+			  m = module
+
+	-> j pn nvu module bnaviye ene 
+		app.module.ts
+		aa file ma add karvanu n bhulvu
+
+	-> koi nvu module create kriye and e module ni andar nvu component create kriye to ema
+
+		export : []
+
+		aavo ek array bnavvo ane e component ne aama pn define karvo jethi aapde aa component ne bija component ma use kri sakiye
+	
+	->In angular module is a logical grouping of component and service.
+	->we can also say that a angular application are built using a number(group) of angular module.
+	->any angular app 
+		app.module.ts 
+	  is a main or default module file. in this file 4 array are listed( Or meta data of @NgModel decorator) :
+
+	  	i)declaration :
+	  		->j pn nvu *component* create kriye t bdha declaration na array ma list karvu pde
+	  		->CLI thi component create krisu to automatic add thay jse
+	  		->we can also declare pipe and services in this array.
+
+	  	ii)imports :
+	  		->j pn nva module create kriye or angular na built in module no use karvo hoy to ene aa array ma list karva ane sathe upar import karva
+
+	  	iii)providers :
+	  		->When we creat a service we must declare it in this array.
+
+	  		->service ni andar lakhela code ma jo koi error hse to t run time e j khbr padse
+	  		->jyare component na code ni error compile time e khbr padi jse
+	  		->aam aa difference mate bdhane alag alag section(array) ma declare kriye chiye
+
+	  	iv)bootstrap :
+	  		->bootstraping ni process mate kya component ne load karvu t ama define thyelu hoy
+
+	  	=>*Note:*
+
+	  		->Koi bija module file na component ne koi bija module na component ma use karva hoy to...j module na  component ne use karva che t *module file* ne j component ma use karva che teni *module file* ma add karvi.
+
+*Why we create multiple module*
+	
+	->koi mota project ma bdha j component or jo bootstrap or angular material na koi component no use karvo hoy to bdha j flow(login,home,inner page, admin site,sign up) na bdha component ne ek j 
+		app.module.ts
+	file ma declare krisu to confusion vdhi jse...jethi aa conflict dur karva aapde bdha flow mate alag alag module create kriye ane e module ni andar jarur mujab component create and add kriye.
+
+	->We can not define one component in more than one module.ts file. we must define one component in only one module.ts file otherwise it gives an error at the runtime.
+
+
+*Decorators in angular* :
+	
+	->Decorators are just a function in TypeScript that return function.
+	->The name of decorators start with *@* symbol and following by brackets and arguments.
+	->this function supply meta data to the app.
+	->It execute at the runtime
+	->There are four type of decorators : OR
+	->The metadata is represented by decorators like:
+
+		i)Class decorators:
+			->@Component (used to defile the meta data of a components)
+			->@Ngmodule (used to defile the meta data of a modules)
+
+		ii)Property decorators:
+			->To define properties that send and received data from dom.
+			->@Input (jo parent to child data comnunicate kravvo hoy to use thay)
+			->@Output (jo child to parent data comnunicate kravvo hoy to use thay)
+
+		iii)Method decorators:
+			->@HostListener
+				HostListener listen the response of host. means app jyare run kriye tyare user page pr kai pn kre(click,hover jevi event) to ene listen kri ne ena pr response(alert,etc) aapi sakiye
+
+				ex. : (koi component ni .ts file ma code karvo)
+
+					import {HostListener} from '@angular/core';
+
+					export class AppComponent{
+						@HostListener('click',['$event'])
+							onhostclick(event:Event){
+								alert('hello');
+							}
+					}
+
+					where, onhostclick = koi pn function nu name rakhi sakiye
+						   'click' = just content na click pr work karse
+						   'window:click' = window na click pr work karse
+
+						    we can write any method we want to use in the place of click like resize,orientationchange,etc.
+
+				o/p : browser ma aapda content pr gme tya click krisu to hello alert aavse
+
+		iv)Parameter decorators:
+			->@Inject
+
+
+*Component in angular* :
+	
+	ng g c component_name
+
+		where g = generate
+			  c = component
+
+	->If we want to generate component in perticular folder:
+
+		ng g c folder_name/component_name
+
+	->Components are the main building block for Angular applications
+	->An angular application is a collection of component
+	->we can create multiple component as per requirements like header,footer, some common section or for page also.
+	->J pn nvu component npm thi create kriye to t teni parent module file ma add thay jse.
+	->Component contain mainly 4 files:
+
+		i) .ts file
+			->Used to write our logic.
+			->In this file @Component decorator are defined and in that below code are listed:
+
+				1) selector: 'app-component_name'
+					->we can used this selector as html tag at whatever place we want to used
+
+				2) templateUrl : './app.component.html'
+					->In this reference of our html path are given
+					->We can also write directly html code into this using
+
+					template : 'our html code'
+
+				3) styleUrls : ['./app.component.css']
+					->In this reference of our css path are given
+					->We can also write directly css into this using
+
+					style : 'our css'
+
+				Other thing that we can use into this decorator:
+
+				4) preserveWhitespaces : true
+					->If it is true than it add white space between our webpage component like (button ni aaju baju space aapse)
+					->Jo false hase to whitespace remove karse
+
+				5) animation,
+
+				and many more
+
+
+		ii) .spec.ts file
+			->Used for testing purpose.
+
+		iii) .html file
+			->Used to write html code.
+
+		iv) .css file
+			->Used to write css.
+
+		* Note * :
+
+			->koi component ne ek module file ma define karya pasi biji module file ma define n karva...error aavse.
+			->jo koi component ne define karya sivay ni koi biji module file ma use karvu che to... define karela component ni module file ne je component na use karvu che teni module file ma import karvu....and j component ne bija module ma use karvo che t component ne potana module file na export arrya ma pn list karvo
+
+
+*Directive in angular* :
+	
+	->Directives are elements which change the apearance or behaviour of the DOM.
+	->means html, css or ts file ma change karvathi DOM ma affect thay to e bdha kam directive thi karya kahevay
+	->There are mainly three types of Directives:
+
+		i)Components:
+
+			->J pn nva component aapde create kriye or default app.component ni template(html) file ma change karvathi DOM ma change thse. so, component is alos one type of Directive
+
+		ii)Structural:
+
+			->It change the DOM by adding OR removing elements
+			->There are three type of structural directives:
+
+				1)NgIf : (*ngIf)
+
+					->It's boolean type directive
+					means jo *ngIf ni value true hse to t element DOM ma add thse. false hse to add ny thay
+
+					ex.-
+
+						<p *ngIf = "checkif"> Hello </p>
+
+						->jo .ts file na code thi checkif ni value true hse to p tag DOM ma add thse
+
+					=>*ngIf with else block :
+
+						->It used when we want to display something for false condition
+
+						ex.-
+
+							<div *ngIf="condition; else elseBlock">
+							...
+							</div>
+
+							<ng-template #elseBlock>
+							...
+							</ng-template>
+
+							->for else block we need to use <ng-template> element.
+
+					=>*ngIf with then and else :
+
+						->aano use jyare condition true hoy tyare then valu template and false hoy tyare  else valu template show kravva mate use thay.
+
+						ex.-
+
+							<div *ngIf="condition ; then thenBlock ; else elseBlock"></div>
+
+							<ng-template #thenBlock>
+							...
+							</ng-template>
+
+							<ng-template #elseBlock>
+							...
+							</ng-template>	
+
+				2)*ngSwitch :
+
+					->It's very similar to a switch statement in JavaScript and Other programming languages.
+					->There are three things in this:
+
+						i)*ngSwitch : 
+
+							->to store or define variable
+
+						ii)*ngSwitchCase :
+
+							->For multiple switch cases
+
+						iii)*ngSwitchDefault :
+
+							->For default value		
+
+							syntax for string : *ngSwitchCase = "'string'"
+							syntax for number : *ngSwitchCase = "1"
+
+						ex.- 
+
+							.html file :
+
+							<select (change)="setValue($event)"
+								<option value="">---select---</option>
+								<option value="first">First</option>
+								<option value="second">Second</option>
+								<option value="another">Another</option>
+							</select>
+
+							<div [ngSwitch = "choose"]>
+								<h3 *ngSwitchCase = "'first'">First</h3>
+								<h3 *ngSwitchCase = "'second'">Second</h3>
+								<h3 *ngSwitchDefault>Default</h3>
+							</div>
+
+							.ts file :
+
+							public choose = '';
+
+							setValue(drp:any){
+								this.choose = drp.target.value;
+							}
+
+				3)*ngFor :
+
+					->It's very similar to a for loop in JavaScript and Other programming languages.
+
+					syntax : 
+
+						*ngFor = "let <value> of <collection>"
+
+							where, <value> is a variable. j koi pn name aapde lai sakiye
+								   <collection> is a property of your component which holds a collection.(means .ts file ma je variable ma array store karyo hoy t.)
+
+						ex.-
+
+							.html file :
+
+							<ul *ngFor = "let student of Students">
+								<li>{{student.name}}</li>
+							</ul>
+
+							.ts file :
+
+							Students = [  
+								{'name' : 'Alpesh Baraiya'},
+								{'name' : 'Rahul Patel'},
+								{'name' : 'Vishal Godhani'}
+							] 
+
+								OR 
+
+							Students:any[] = [
+								...
+							]
+
+						-> there are some local variable used with for loop which are :
+
+							i)index:
+
+								->It return the current index of an element (start with zero(0)).
+
+								ex.-
+
+									<ul *ngFor = "let student of Students ; let i = index">
+										<li>{{i + 1}} {{student.name}}</li>
+									</ul>									
+
+							ii)first:
+
+								->It return the boolean value. 
+								->If current element index is 0 than it return true otherwise false.
+								means current element pelo hse to true return karse ny to false
+
+								ex.-
+
+									<ul *ngFor = "let student of Students ; let f = first">
+										<li>{{f}} {{student.name}}</li>
+									</ul>
+
+							iii)last:
+
+								->It return the boolean value. 
+								->means current element last hse to true return karse ny to false
+
+								ex.-
+
+									<ul *ngFor = "let student of Students ; let l = last">
+										<li>{{l}} {{student.name}}</li>
+									</ul>
+
+							iv)even:
+
+								->It return the boolean value. 
+								->jo current element even hse to true return karse ny to false
+
+								ex.-
+
+									<ul *ngFor = "let student of Students ; let e = even">
+										<li>{{e}} {{student.name}}</li>
+									</ul>
+
+							v)odd:
+
+								->It return the boolean value. 
+								->jo current element odd hse to true return karse ny to false
+
+								ex.-
+
+									<ul *ngFor = "let student of Students ; let o = odd">
+										<li>{{o}} {{student.name}}</li>
+									</ul>
+
+					=>*ngFor with trackBy :
+
+						->aapda page ma for loop thi dynamic data aavto hse means koi button na click pr or biji koi event thi to jo tema duplicate data hase to khali *ngFor loop use karvathi t shu karse k j data already exist che tene pela remove karse ne pasi nva duplicate data ne add karse j app ni speed ma and performence ma issue thay sake che.
+						->ana solution ma *ngFor sathe trackBy use karvathi jo data dynamic add karisu to jo duplicate data aavse tene check karse, jo t current avaialable data ma hse to tene add ny kre nva data ne j add karse
+
+
+					=>*ngFor with Grouping :
+
+						->koi array ma dharo k country's and person na name listed che. hve aapde e rite filter karvu che k alag alag list ma same country vala person na j name ave to tena mate Grouping Concept no use thay
+
+
+		iii)Attribute:
+
+			->It modify the appearance of the DOM elements.
+			->There are two built in attribute directives:
+
+				1)NgStyle :
+
+					->We can change the style of an DOM element dynamically, according to the condition using ngStyle
+
+					ex.1-
+
+						<p [ngStyle = "{'color' : 'red'}"]>Hello</p>
+
+					ex.2-
+
+						<p [ngStyle = "{'color' : 'condition' ? 'red' : 'green'}"]>Hello</p>
+
+					ex.3-
+
+						<p [ngStyle = "{'color' : getColor()}"]>Hello</p>
+
+				2)NgClass :
+
+					->*ngClass allow us to set the class dynamically according to a condition
+					->we can do that using 4 methods:
+
+						i)*ngClass with string :
+
+							ex.-
+
+								<div [ngClass] = "'class_name1 class_name2'"></div>
+
+						ii)*ngClass with array :
+
+							->similar to with string but syntax is different
+
+							ex.-
+
+								<div [ngClass] = "['class_name1', 'class_name2']"></div>
+
+						iii)with Object :
+
+							ex.- 
+
+								.html file :
+
+									<div [ngClass]="condition ? 'classname1' : 'classname2'" (click) = "menu()" ></div>								
+								.ts file :
+
+									condition: boolean = false;
+									menu(){
+									    this.condition = !this.condition;       
+									}
+
+									->means value true hse to pelo class add thse false hse to bijo class add thse
+									->click event value toggle kravva mate lidhi che aya
+
+						iv)with component method :
+
+							->.ts file ma class mate function bnavvu value true k false sathe. ane t function ne .html file na element ma *ngClass directive ma pass karvu with arguments
+
+
+*Data Binding in angular* :
+
+	->It allow us to define communication between a component and the DOM. means we can easily pull or push data from DOM to component or component to DOM.
+
+	->There are 4 type of data binding :
+
+		1) Interpollation OR
+		   One way data binding OR
+		   From component to DOM Data binding
+
+		   	-> syntax : 
+
+		   		<div> Hello {{ name }} </div>
+
+		   		In .ts file
+
+		   			name = 'Alpesh'
+
+		   			where, name = variable name
+
+		   	-> We can also do summation,substrate,multiplication,division using Interpollation if both value have same type
+
+		2) Property Binding OR
+		   One way data binding OR
+
+		   	-> What is Property:
+
+				->jyare html page run kriye tyare browser page ne read(parse) karse ane j html elements na attribute che tene corresponding property generate karse.
+				->jethi aapde DOM na koipan element ne property through access kri sakiye
+
+				ex.
+					->if our html like this with id attribute 
+					
+						<body id="page"></body>
+
+					then our property after html parsing
+
+				 	body.id = 'page';
+
+		   	->With this we can set the value of an attribute directly.
+
+		   	-> syntax :
+
+		   		[property] = 'expresion'
+
+		   		ex. 
+
+		   			i) <span [innerHTML] = "title"></span>
+
+		   				.ts file
+
+		   				title = "Hello";
+
+		   			ii) <img [src] = "'url'" [height] = '200'>
+
+		   				where, url = any string(koi on string value)
+
+		3) Attribute Binding :
+
+			-> What is Attribute:
+
+				->html element(tag) ma aapde j kai pn lakhiye tene attribute kahevay
+
+					ex. <body id="page"></body>
+					    <img src="image.svg" height = '200'>
+
+					    here id, src, height are attributes
+
+			->Is same as property binding. but we must bind attribute binding when there is now element property there to bind.(means jyare koi HTML attribute ni koi corresponding DOM property n hoy tyare j attribute binding no use karvo)
+
+				ex.
+
+					<td [attr.colspan] = "myColspan" >..</td> OR
+					<td attr.colspan = {{myColspan}} >..</td>
+
+					.ts file
+
+					 myColspan = 2;
+
+* Event in Angular *
+	
+	->When a user interacts with an application in the form of a keyboad movement, a mouse click, mouse move, mouse hover, it generates an event. These event need to handled to perform some kind of action. This is where  event binding comes into picture.
+	->It is also a one way binding(means kato aapde data component thi data view page(DOM) pr show kraviye OR view page parthi data component ma pass kriye)
+
+	ex.
+		<button (click) = 'myFun()'> click </button>
+
+
+* Two way data binding in Angular *
+	
+	->The most popular and widely used data binding mechanism is two-way binding in the angular framework.
+	->Basically two-way binding mainly used in the input type field or any form element where user type or provide any value or change any value in the one side, and on the other side, the same automatically updated in to the controller variables and vice versa.
+	(means DOM ma koi input element or koi form element ni value change kriye to ene related variable j .ts file ma define karyo hse teni pn value change thse e j time e..same evi j rite...jo .ts file na variable ni value change kriye to DOM na t variable ne ralted input ni value pn e j time e change thse)
+
+	->It is the combination of :
+
+		event binding + property binding => [(ngModel)] = two-way data binding
+
+	->What is ngModel:
+
+		->ngModel is a directive which binds input, select and textarea, and stores the required user value in a variable and we can use that variable whenever we require that value. It also is used during validations in a form.
+
+
+	->We can do it with two way:
+
+
+		1) Without [(ngModel)] :
+
+			ex. <input [value] = 'data1' (input)='data1=$event.target.value'>
+
+				<p>{{data1}}</p> (just jova mate k value change thay che k ny)
+
+			.ts file 
+
+				data1 = "Alpesh Baraiya";
+
+		2) With [(ngModel)]:
+
+			->For that need to import two modules in our module.ts file
+
+				import { NgModule } from '@angular/core'; default add j hoy
+				import { FormsModule } from '@angular/forms';
+
+			ex. <input [(ngModel)] = 'data'>
+
+				<p>{{data}}</p> (just jova mate k value change thay che k ny)
+
+			.ts file 
+
+				data = "Alpesh Baraiya";
+
+
+* Pipes(|) in Angular *
+	
+	->Pipe is used to tranform data to desired output.
+	->It takes in a data input and transform data to a different output.
+	(means koi data lowerCase or camelCase ma hoy ane tene upperCase k koi bija formate ma show kravvo hoy tyare pipe no use thay OR user koi pn formate ma data enter kre ene aapde aapdi rite bija format ma change kri ne database ma store kravvu hoy tyare use thay.)
+
+	->syntax : {{data | uppercase}}	
+
+		.ts fiel
+
+			data = 'test'
+
+			o/p = TEST
+
+	->Types of Pipes :
+
+		1) Built-in Pipes :
+
+			->two type of built-in pipe :
+
+				i)Parameterized pipe :
+
+					->We can pass any number of parameters to the pipe using colon(:)
+					->The parameterized pipe can be created by declaring the pipe name with a colon ( : ) and then the parameter value.
+
+					ex. 
+
+					.ts file
+
+						dob = new Date(1997,10,8);
+						salary = 80000;
+						number = 0.0123456789;
+
+					.html file
+
+					1) normal
+
+						<div>{{ dob }}</div>   o/p : Sat Nov 08 1997 00:00:00 GMT+0530 (India Standard Time)
+
+					2) with pipe:
+
+						<div>{{ dob | date }}</div>   o/p : Nov 8, 1997
+
+					3) with pipe and one parameter:
+
+						<div>{{dob | date:'medium'}}</div>   o/p : Nov 8, 1997, 12:00:00 AM
+
+					4) with pipe and two parameter :
+
+						<div>{{salary | currency:'USD':true}}</div>   o/p : $80,000.00
+
+					5) slice example
+
+						<div>{{data1 | slice:5:8}}</div>    o/p : h B
+
+						<div>{{data1 | slice:5}}</div>      o/p : h Baraiya
+
+					6)  percent example
+
+						<div>{{number | percent}}</div>   o/p : 1%
+
+						<div>{{number | percent:'2.4-8'}}</div>   o/p : 01.23456789%
+
+					7) json pipe
+
+						-> it converts a value into JSON string
+
+						.ts file
+
+							public employee = [
+								{'id' : 1, 'name' : 'Alpesh'},
+								{'id' : 2, 'name' : 'Rahul'}
+							]
+
+						.html file
+
+							<div> {{ employee }} </div>  o/p : [object Object],[object Object],[object Object]
+ 
+							<div> {{ employee | json }} </div>  
+
+								o/p : [ { "id": 1, "name": "Alpesh" }, { "id": 2, "name": "Rahul" }
+
+
+				ii)chaining pipe (multiple pipe) :
+
+					->We can use multiple pipes with the same data at the same time.
+
+						syntax : data | pipe | pipe | pipe | and so on
+
+						ex.
+
+							.ts file
+
+								dob = new Date(1997,10,8);
+								data = 'Alpesh Baraiya';
+
+							.html file
+
+								1) <div>{{dob | date:'fullDate' | uppercase}}</div>    o/p : SATURDAY, NOVEMBER 8, 1997
+								
+
+		2) Custom Pipes :
+
+			-> To use custome pipe need to create separate .ts pipe file :
+
+				ng g pipe pipe_name
+
+				to more...you can check sahosoft video
+
+
+* Routing in Angular *
+	
+	->It's allow us to develop a single page application.
+	means using router we can load a multiple component or a page without page load
+
+	->Angular router is a official Angular routing library, written and maintained by the Angular Core team.
+	->It also updates the browser's history to the user can use the back and forward buttons when navigation back and forth(agal ane pasal) between pages
+
+	=>How router works :
+
+		->When user navigate to a page, Angular Router performs the following 7 steps in order.
+
+		1)In first step Angular router takes the browser URL and parse it as a URL tree.
+
+			->To parse the URL, Angular uses the following conventions:
+
+			/  => If slashes than divide URL segments
+		    () => If parantheses than specify *Secondary routes*
+		    :  => If colon than specify named *router outlet*
+		    ;  => If semicolon than specify a *matrix parameter*
+		    ?  => If question mark than separates the *query string parameter*
+		    #  => If hashtag than specify the *fragment*
+		    // => If a double slash than separate multiple Secondary routes
+
+		2)Redirect
+
+			->Before Angular routes uses the URL tree to create a router state, it checks to see any redirect should be applied OR not
+			->There are 2 types of redirect :
+
+				i) local redirect : 
+
+					-> j url ma backslash(/) n hoy teva URL.
+					-> local redirect j part different hse tene j replace karse
+
+						ex. - {path: 'one', redirectTo: 'two'}
+
+				ii) absolute redirect : 
+
+					-> j url ma backslash(/) hoy teva URL.
+					-> absolute redirect akha URL ne replace kri dese
+
+						ex. - {path: 'one', redirectTo: '/two'}
+
+		3)Identify the router state
+
+			-> First step ma j router tree banyu tema user e click kreli url ne search karse ane j siblings or child ma ene malse tya thi ene redirect kri dese.
+
+		4)Guard 
+
+			-> koi pn url direct paste kri didhi to check karse k user valid OR authenticate(login thyo che k km) che k ny e bdhu aa router guard ma decide handle kre
+
+		5)Resolve 
+
+			-> it resolve the required data for the router state 
+
+		6)Activate
+
+			-> j component routing darmyan show karvana che tene activate kri dese
+
+		7)Manage
+
+			-> It manage the navigation and repeate the process when a new URL is requested.
+
+
+	=>Router Outlet :
+
+		->Is a dynamic component. 
+		->Is used to display view based on router navigation.
+		-> means jm aapde component na tag ne jya lakhiye tya eno code show thay te j rite router outlet ne pn j location pr add kariye e location pr e component ne show karse ane e dynamically change thto rese(means upar browser ma url change thti rese tm aapdo router outlet pn change thse).
+
+		ex.- <a [routerLink]="['/student']" > Student </a>
+
+			user jyare Student pr click karse tyare ema j Student component che t niche apela router-outlet ma load thay ne dispay thse..ane judi judi link mate <router-outlet></router-outlet> ma code change thto rese
+
+		<router-outlet></router-outlet>
+
+
+	=>Router Link :
+
+		-> Jm aapde koi normal website ma koi bija page pr redirect karvu che to anchor(<a href="#"></a>) tag no use kriye chiye tm j Angular ma refresh vagr koi bija page pr redurect karvu hoy to anchor tag ma href ni jagyaye routerLink no use thay.
+
+			ex.- <a [routerLink]="['/student']" >Student</a>
+
+		->jo project create karti vakht e routing module generate karvama *no* select karyu hoy ane pasi thi generate karvu hoy to Command:
+
+			ng generate module app-routing --flat --module=app
+
+				where, --flat  - lakhvathi t src/app ma routing module generate karse insted of any perticular folder
+					   --moduel=app  - aa lakhvathi routing module file generate thay ne AppModule ma automatic import thay jse
+
+			-> We can set router link two way:
+
+				i) Static configuration
+
+					-> means just routing.module.ts file ma path define kri ne anchor tag ma e link pass kri devi.
+
+					ex.- 
+						app-routing-module.ts file
+
+							const routes: Routes = [
+							  {
+							    path:'student',component:StudentComponent
+							  },
+							  {
+							    path:'student-details',component:StudentDetailsComponent
+							  },
+							];
+
+						html template file
+
+							<a [routerLink]="['/student']" routerLinkActive="router-link-active" >Student</a>
+							<a [routerLink]="['/student-details']" routerLinkActive="router-link-active" >Student details</a>
+
+				ii) Server side configuration
+
+					->means koi button na click pr link ne dynamically condition na base pr redirect karvi sakiye
+
+					ex.- 
+						.ts file
+
+							import { Router } from '@angular/router';
+
+							export class AppComponent {
+
+							 	constructor(private router: Router){}
+
+								 myFun(){
+								   if(true){
+								     this.router.navigate(['/student']);
+								   }
+								   else{
+								    this.router.navigate(['/student-details']);
+								   }
+								 }
+							}
+
+						.html file
+
+							<button (click) = 'myFun()'> Click Me! </button>
+
+
+	=>Redirecting Routes : (How router works na step 2 nu explanation)
+			
+		redirectTo:
+
+			->It used to display the first the perticular component when our application is start.
+			->And we must need to put it in the first of a routes array list.
+			->aapde aapdi site load thay tyare j component ne sauthi pela user ne show kravvu hoy tene *redirectTo* ni andar set kriye chiye.
+
+			ex.- 
+				app-routing-module.ts file
+
+					const routes: Routes = [
+					  {
+					    path:'', redirectTo: 'student', pathMatch:'full'
+					  },
+					];
+
+
+	=>Wildcard Route :
+
+		->Wildcard Route is used to handle the incorrect urls. 
+		->And we must need to put it in the last of a routes array list.
+		->Firstly router search for listed path for perticular url if it not found any matches than it redirect user to wildcard route component.
+		->means user e koi khoti url paste kre to tene page not found na component pr redirect kravva mate
+		->configuration kriye means route-module.ts file jya aapde bdha path set kriye tya aa wildcard route ne sauthi last ma define karvo jethi pela uparna path match karine jo koi n male to last ma aa path pr redirect krse
+
+		ex.- 
+			app-routing-module.ts file
+
+				const routes: Routes = [
+				  {
+				    path:'**',component:PageNotFoundComponent
+				  },
+				];
+
+
+* How to use API in angular *
+	
+	-> As we know that javascript, angular and react kind of things can not connect directly with the database. So, we need a interface that help us to connect to the database
+
+
+* Bootstrap * 5.1.3
+	
+	-> npm i bootstrap
+
+		after that we need to define it's css and js file path in angular.json files build array.
+
+
+* Angular Material * 12.2.10
+
+	-> Is a UI component library for angular.
+	-> It's reusable UI components help us to design our app user friendly and attractive.
+
+	-> How to use:
+		
+		ng add @angular/material
+
+		-> And then just need to define Angular material component into module file and add it html code to html templte
+
+
+	-> DatePicker: (need to import both files)
+
+		import {MatDatepickerModule} from '@angular/material/datepicker';
+		import {MatNativeDateModule} from '@angular/material/core';	
+
+		-> to add custom class (panelClass)
+
+
+* Angular Interview Quations *
+
+	->https://github.com/sudheerj/angular-interview-questions#what-is-angular-framework

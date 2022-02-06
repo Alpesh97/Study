@@ -1,0 +1,389 @@
+note:-	
+	In HTML 4.x we need to write *type* attribute in *script* and *style* tag.
+
+/*Convert jQuery to Js*/
+https://github.com/jackocnr/intl-tel-input/wiki/Converting-jQuery-to-JavaScript
+
+
+HTML/CSS/JavaScript :
+
+=> HTML :
+	Control the *structure* of your webpage.
+
+=> CSS :
+	Control the *presentation/design* of your webpage.
+
+=> JavaScript :
+	Adds *behaviour and interactivity* of your webpage.
+
+
+* Javascript vs Javascript Library *
+
+
+Compiler/Interpreter :
+	
+=> Compiler:
+	->	
+
+
+=> Interpreter:
+	->
+
+
+Scripting && Programming && Markup Language :
+	
+=> Scripting language : 
+	->Is used to connect one language with another language
+		ex.- PHP,JavaScript
+	->All scripting languages are programming language
+	->Compolation is not required. That's why it run faster.
+
+=> Programming language : 
+	->Is main language, used to create a software.
+		ex.- Java,C,C++,etc.
+	->All programming languages are not scripting language.
+	->Compolation is required.
+
+=> Markup language : 
+	->It used to Create a data structure or website structure.
+		ex.- HTML,xml.
+
+
+=> Data Types:
+
+    10 + "20" = 1020
+    9 - "4" = 5 // bug
+    " " + " " + 1 = "  1"
+    " " + " " = "  "
+    " " - " " = 0
+    "alpesh" - "baraiya" = NaN
+    true + true = 2 // true = 1, false = 0
+    false - true = -1
+
+
+=> null vs undefine:    
+
+    -> null means nothing (empty).
+    ex. - var test = null;
+          console.log(test);
+          console.log(typeof(test));
+
+            o/p : null
+                  object //bug
+
+    -> undefine means variable is defined but value is not assigned.
+    ex. - var test;
+          console.log(test);
+          console.log(typeof(test));
+
+            o/p : undefine
+                  undefine
+
+=> What is NaN? (Not a Number)
+
+    -> When we try to substact two strings than it return NaN.
+    -> It is a property of the global object. OR It is a variable in global scope.
+    -> we can also use it as a condition
+
+        ex : var test = "Alpesh";
+        
+            if(isNaN(test)){
+                console.log('valid');
+            }
+            else{
+                console.log('not valid');
+            }
+
+            o/p : valid
+
+    -> NaN == NaN : false // because we don't know what is for NaN(Not A Number but kono?)
+    -> NaN === NaN : false
+    -> Number.NaN === NaN : false
+    -> Number.NaN == NaN : false
+    -> console.log(isNaN(NaN)) : true
+    -> console.log(isNaN(Number.NaN)) : true
+
+
+=> Expression and Operators:
+
+    -> Expression : The combination of operator and Operands is called Expression.
+
+        ex.  10 + 5    where 10,5 are Operands
+                              + is a operator
+    
+    -> Operators : There are many types of operators:
+
+        1) Assignment operator : It assign a value to it's left operand based on the value of it's right operand,
+
+            ex.  x = 5;
+
+        2) Arithmetic operator : It takes a numeric value and return a single numerical value.  
+
+            -> Used for perform a Arithmetic operations (addition, substaction, multiplication, division)
+        
+        3) Increment and Decrement operator: x++ OR ++x OR x-- OR --x
+
+            -> Postfix increment:
+
+            let x = 3;
+            y = x++;
+
+            // y = 3
+            // x = 4
+
+            -> Prefix increment:
+
+            let x = 3;
+            y = ++x;
+
+            // y = 3
+            // x = 3
+
+        4) Comparision operator: It simply use for comparision
+
+            -> https://www.w3schools.com/js/js_comparisons.asp
+
+        5) Logical operator : It used with Boolean(logical) value.
+
+            -> https://www.w3schools.com/js/js_comparisons.asp
+
+        
+        -> exercise:    
+
+            1) 3**5 = 243 (3*3*3*3*3)
+            2) 10**-1 = 0.1 (1/10)
+            3) 5 - "alpesh" = NaN
+
+            4) swap two number program:
+
+                var a = 5,
+                    b = 10;
+
+                var c = b // c = 10
+                    b = a // b = 5
+                    a = c // a = 10
+            
+            5) swap two number program without using third variable:
+
+                var a = 5,
+                    b = 10;
+
+                    a = a + b // a = 15
+                    b = a - b // a = 5
+                    a = a - b // a = 10
+
+
+=> Control statements and loops:
+
+    1) if and else: 
+
+        -> If the condition is true than if block will be executed and if the condition is false than else block is executed.
+
+        -> write a program to find the given year is leap year or not?
+
+            var year = 2020;    
+            
+            if(year % 4  === 0) {
+                if(year % 100  === 0) {
+                    if(year % 400  === 0) {
+                        console.log('This is Leap Year');
+                    }
+                    else{
+                        console.log('Not a Leap Year');
+                    }
+                }
+                else{
+                    console.log('This is Leap Year');
+                }
+            }
+            else{
+                console.log('Not a Leap Year');
+            }
+
+    2) In javascript there are 5 falsy value  : 0(false), "", undefine, null, NaN
+
+        if(0 || "" || undefine || null || NaN){  OR if(test = 0 || test = "" || test = undefine || test = null || test = NaN
+            console.log('if');
+        }
+        else{
+            console.log('else');
+        }
+
+        o/p : else
+
+
+        if(scope = 5){
+            console.log('if')
+        }
+        else{
+            console.log('else')
+        }
+
+        o/p : if
+
+    3) ternary(Conditional) operator: It's an only operator that takes three operands
+
+        -> basically it's a shorter version of if..else block
+
+        -> sybtax : variable_name = (condition) ? value1 : value2
+
+    4) loops:   
+
+        i) while : that perticular statement executes untill the condition evaluates to true.
+
+            -> It firstly check the condition and if it is true then and then it goes into it's block.
+            -> It is block scope.
+
+        ex. var num = 0;
+            while(num < 10){
+                console.log(num);
+                num++;
+            }
+
+            o/p :   0
+                    1
+                    2
+                    3
+                    4
+                    5
+                    6
+                    7
+                    8
+                    9
+
+        ii) Do-While  : 
+
+        -> It firstly execute the do block then check the condition and if it is true then it again to the the do block and cycle repeat.
+        -> It is block scope.
+
+        ex. var num = 0;
+
+            do{
+                console.log(num);
+                num++;
+            }while(num < 10);
+
+            o/p :   0
+                    1
+                    2
+                    3
+                    4
+                    5
+                    6
+                    7
+                    8
+                    9
+
+           iii) for :   
+
+           -> syntax: for(initializer; condition; iteration) {
+                        // code
+                      }
+            -> It firstly check the condition and if it is true then and then it goes into it's block.
+            -> It is block scope.
+            -> At the time of for loop run it visit to the initializer only first time.
+
+            ex. for(var num = 0; num < 10; num++) {
+                    console.log(num);
+                }
+
+                o/p :   0
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+
+            -> For vs While:    
+
+                ->In general, you should use a for loop when you know how many times the loop should run. 
+                ->If you want the loop to break based on a condition other than the number of times it runs, you should use a while loop.
+
+            -> exercise : 
+
+                i) write a program to print the table of given number.
+
+                    var num = 8;
+                    for(var i = 1; i <= 10; i ++){
+                        console.log(num + "*" + i + "=" + (num * i));
+                    }
+
+
+=> Function:    
+
+    ->https://www.w3schools.com/js/js_functions.asp
+
+    ex. function sum(a, b){      where a,b are called the parameters
+            var total = a + b;
+            console.log(total);
+        }
+
+        sum();
+        sum(10,25);  where 10,25 are called the arguments
+
+        o/p : NaN
+              35
+
+    -> Function Expressions: means create a function and put into the variable.
+
+        ex. function sum(a, b){
+            var total = a + b;
+            console.log(total);
+        }
+
+        var funExp = sum(10,25);  
+
+    -> but function expressions are incomplete without return statement.
+
+    -> Return Keyword : when javascript reaches a return statement, the function will stop execution.
+
+        -> return value is return back to the "caller".
+
+            ex. function sum(a, b){
+                    return total = a + b;
+                }
+
+                var funExp = sum(10,25); 
+                console.log(funExp);
+                
+                so we can easy put that varibale in any place like: console.log('the sum is: ' + funExp);
+
+                o/p : 35
+                      the sum is: 35
+
+    -> Anonymous Function: function without a name is called a Anonymous function.  
+
+        -> Is same as a function expression but it's an another way to describe it.
+
+            ex. var funExp = function(a, b){
+                    return total = a + b;
+                }                                                       where : function(a, b){
+                var sum = funExp(4, 16);                                           return total = a + b;
+                console.log('the sum is' + sum);                                } is called the Anonymous function.
+
+                o/p : 20
+                      the sum is: 20
+
+=> ES6 (EcmaScript 2015):
+
+    -> var vs let vs const: https://www.w3schools.com/js/js_variables.asp
+
+    -> Template literals (Template String): https://www.w3schools.com/js/js_string_templates.asp
+
+    -> Default parameters : 
+
+        -> In our function if sometime user forgot to enter some arguments or we want to perform some operations with our default arguments than 
+        we can use Default parameters in our function.
+
+        ex. function sum(a,b = 5){
+                return a + b; 
+            }
+
+            console.log(sum(3));    // If we pass only one argument in our function then it automatically assign to the first parameters.
+
+            o/p: 8
+

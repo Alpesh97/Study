@@ -1,0 +1,248 @@
+Note: 
+
+=> position: sticky is not working when we apply overflow:hidden to its parents section or block.
+
+=> To compile scss files use *Live Sass Compiler* VS code extension.
+
+    -> To change it's path and formate setting : https://github.com/ritwickdey/vscode-live-sass-compiler/blob/master/docs/settings.md
+
+=> We apply _(underscore) with partial scss(sass) file name that means those files not included in compilation process and compiler does not generate the css files of those files.
+=> For best practice do not create nested hierarchy to more than 3 child.
+=> Interpolation : 
+
+    scss:   
+    .main{
+        display:block;
+        #{&}__inner {                       where : & represents the direct parent
+            width:100%;                           : #{&} called interpolation
+        }
+    }
+
+    css:    
+    .main {
+        display:block
+    }
+    .main .main__inner{
+        width:100%;
+    }
+
+
+=> Variable with key pair value:
+
+    $font-weights : (
+        "regular" : 400,
+        "medium" : 500,
+        "semibold" : 600,
+        "bold" : 700,
+    )
+
+    use: 
+
+    .main{
+        font-weight: map-get($font-weights, regular);
+    }
+
+    css:
+    .main{
+        font-weight: 400;
+    }
+
+
+=> Functions : Use to compute values and return values
+
+   @function weight($weight-name) {
+       @return map-get($font-weights, $weight-name);
+   }
+
+   use:
+
+   .main{
+       font-weight : weight(bold);
+   }
+
+   css:
+   .main{
+        font-weight: 400;
+    }
+
+
+=> mixins: Use to define styles
+
+    @mixin flexBox {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    use:
+    .main{
+        @include flexBox;
+    }
+
+    css:
+    .main{
+        display: flex;
+        flex-wrap: wrap;        
+    }
+
+    -> With passing arguments:
+
+        @mixin flexBox($direction) {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction : $direction;
+        }
+
+        use:
+        .main{
+            @include flexBox(row);
+        }
+
+        css:
+        .main{
+            display: flex;
+            flex-wrap: wrap;        
+            flex-direction : row;
+        }
+
+
+=> extend: Use to add the same styling elsewhere    
+
+    1)
+    .main{
+        display:block;
+        #{&}__inner {
+            width:100%;
+        }
+        #{&}__inner1 {
+            @extend .main__inner;
+            display : block;
+        }
+    }
+
+    css:
+    .main .main__inner, .main .main__inner1{
+        width:100%;
+    }
+    .main .main__inner1{
+        display : block;
+    }
+
+    2)
+    %toolbelt {
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .action-buttons {
+        @extend %toolbelt;
+    }
+
+    css:
+    .action-buttons {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+
+=> @at-root: When there is a multiple nesting targets and if we want to emit parent target then this rule is used.
+
+    scss:
+    ul {
+        list-style: none;
+        li {
+            position: relative;
+            @at-root a {
+                display: block;
+            }  
+        }
+    }
+
+    css:
+    ul{
+        list-style: none;
+    }
+    ul li{
+        position: relative;
+    }
+    a{
+        display:block
+    }
+
+
+=> Some replaces in scss syuntax:
+
+    -> remove calc:
+    css : .main{
+            width: calc(100% - 100px);
+        }
+
+    scss : .main{
+            width: 100% - 100px;
+        }
+    
+    -> same inner target:
+    css : ul ul, ol ol{
+            padding: 0;
+        }
+
+    scss : ul, ol{ 
+            & &{
+                padding: 0;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+after/before na overlay pr click event execute karvi hoy to...document click vali method use kari sakiye
+
+
+quary - https://prnt.sc/1zs4iem
+sol. - padding-left: calc((100% - 1180px) / 2);    where. 1180 - container size;
+
+sass ni boilerplate ma utiliti file update kri che
+
+//for append arrow and dots in another position
+$('.testimonials-slider-inner').each(function () {
+	$(this).slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: true,
+		rows: 0, // for remove extra blank div
+		appendArrows: $(this).next('.slick-slider-controls'),  (where, .slick-slider-controls = is a div that we just need
+		appendDots: $(this).next('.slick-slider-controls'),	   to put it in any position and than we just give it's reference here)
+	});
+});
+
+https://jalso-shop.myshopify.com/.....for search design
+
+fontastic : for svg icon convert to font family
+
+https://github.com/mgediya
+
+Website Standard Documentation: 
+    FrontEnd
+    Wordpress
+    Page Speed Improvement
+
+Frontend Guidelines :
+    HTML
+    Stylesheets
+    jQuery
+    Production Testing
+
+Stylesheet Standards:
+    CSS
+    SASS
+    Bootstrap
+
+Page Speed Improvement:
+    Server
+    FrontEnd
+    BackEnd

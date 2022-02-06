@@ -1,0 +1,117 @@
+8010968334
+
+vector -> based on path or some mathematical calculation pr based hoy(game etlu zoom kariye fatse ny)
+raster -> based on pixels (vdhare zoom karsu to nana nana squre boxes ma image show thse)
+
+PSD -> Photoshop Document
+PSB -> Photoshop Big (big file which store a smart object)
+
+JPEC - Joint Photographic Expert Group (lossy format)
+PNG - Portable Network Graphic (Loss less format)
+GIF - Grahpic Interchange Format (Only 256 color)
+TIFF - Tagged Image File Format (Mostly used for Printing Purpose)
+RAW - this is camera's uncompresed image
+BMP - Bit-Map (Developed by window...same as TIFF)
+
+Note: koi pn image pr work karta hoye to always new layer lay ne work karvu
+
+-> alt + shift : image ne copy paste karva
+->ctrl + || alt + scroll down : For zoom in
+->ctrl - || alt + scroll up : For zoom out
+->alt + backspace || alt + delete : To fill Forground color
+->ctrl + backspace || ctrl + delete : To fill Background color
+->ctrl + shift + backspace : Koi png image ma text na or icon na color change karva hoy to aa use karvu
+->shift + backspace : to fill bgcolor || fgcolor...but fill karta pela ek dialoug box open thse ema pusase kone(means akha layer ne k khali aapde j changes karya ene k) ane kevo color fill karvo
+->ctrl + Z : For only one time undo
+->ctrl + alt + Z : For Multiple time undo
+->ctrl + shift + Z : for Redo 
+->[ : For make brush size small
+->] : For make brush size large
+->F : for full screen
+->ctrl + J : Jetla area ne select karyo hse ene copy kri ne new layer ma copy karse || jo koi area select n karyo hoy to aakha layer nu  copy bnavse
+->shift + click : select karti vakht e koi part ray jay selection ma to ene *shift* press krine selection ma add kri sakiye
+->ctrl + shift + N : For create a new layer
+->ctrl + shift + I : For Inverse Select
+->ctrl + I : For Inverse Color of layer
+->X : To inverse bgcolor and fgcolor
+->alt + click : jo koi selection na brush ma plus sign ave to *alt + click* karvathi t minus thay jase ane aapda selection mathi e area remove karse
+->ctrl + T : For transform layer(means layer ne resize karva)
+->ctrl + G : For Group the layer
+->selection tool select kri ne koi pn object, group of layer or koi selection ne *alt* dbavine drag karisu to e copy thay ne paste thay jase
+->F12 : koi *image* pr ghanu bdhu kam karya pasi hti evi image karvi hoy means reset karvi hoy to *F12* key press karvi.
+->alt + right click + mouse drag up-down side : brush ni *hardness* ochi vdhare thse
+->alt + right click + mouse drag left-right side : brush ni *size* nani-moti thse
+->D : fgcolor and bgcolor black and white (default) color ma set thase
+->shift + mouse grag(up-down || left-right) : It's draw a strait line
+->shift + mouse click : Ek jagyae click krine biji j pn jagyaye click karyu hse tya sudhini strait line draw karse
+->ctrl + E : Selected layer ne merge karse
+->ctrl + shift + alt + E : Jetla layer hse e bdha ne merge karse ane nvi copy layer generate karse
+->ctrl + D : for remove selection
+->alt + ctrl + I : koi image ne resize karva 
+->R + drag : To rotate viewport
+->ctrl + R : To show Rulers
+->ctrl + ; :-To show || hide grid
+->ctrl + alr + C :- To resize image
+
+=>Photo Beautify:
+	->ctrl + alt + shift + L : Increase brightness
+	->passport photo size : 3.5*4.5
+
+Tools : 
+
+=> Selection tool - (M)
+	Simply apda canvas no koi part active kre...mean canvas na koi perticuler rectangle ma j work krvu hoy to to etla part ne select karvo jenathi j pn kam karsu e ema j thse
+
+=> Lasso - (L)
+	For free selection 
+
+=> Magic Selection Tool - (W)
+	For select a similar color area
+
+=> Content-aware - 
+	for vastu ne gayab kri aaju baju jevo copy bnavvu hoy to....koi rough selection kri *shift + backspace* kri ne content-aware select kri ok press karvu
+
+=> Content-Aware move tool - 
+	koi vastu ne cut kri biji jagyaye move karvi hoy to aa tool no use thay
+
+=> Erase tool - (E)
+	->simple erase :
+		Jo koi layer as a background hase to simple erase tool thi drag karta bgcolor j set hse(default white) e fill thva lagse || jo layer simple hase means lock ny hoy to erage karvathi transparent fill karse
+
+	->magic erager :
+		koi jagyare click karisu to akha layer ma click karyu hoy eva jetla pn same color hase ene erase kri dese
+
+	->background eraser :
+		ek jagyaye click kri ne...click chodya vagar biji jagyayre drag krisu to eva j area ne erase karse...pasi bija type na area pn mouse lay jasu to pn koi affect ny thay
+
+=> Layer Mask :
+	->koi image or layer ma layer mask add karva t layer or layer na koi part ne select kri *right bottom* pr add vector mask krine icon hase(camera jevo) tena pr click karvu
+	->ema white part etle k apdu layer totaly khali che...aapde kai work nthi karyu and black part jetlo show kre etla ma work karyu che 
+
+=> Pen Tool - (P) 
+	
+	-> koi handle ne remove karvu hoy to *alt* + click karvathi t handle remove thay jse
+	->*alt* press krine koi handle ne move karsu to teni direction change thse
+	-> *ctrl* press kri gme e point ne drag karsu(direct selection tool) to aakho point move thse...by default curve ma move thse...jo curve ma move n karvu hoy to *alt* press kri ne handle pr click karvathi curve remove thay jase
+	-> first point sathe last handle ne direct jodsu to curve show thse evu n karva devu hoy to last point e avta pela handle ne remove karvu pasi first point sathe join karvu
+	-> koi path k shape bnavta khoti jagyaye click thay gyu and click chodyu ny hoy to *spacebar* dbavathi point ni move kari sakiye
+	-> koi selection pr nvo point add karvo che to simple t point pr click karvu
+	-> koi selection pr koi point remove karvo che to simple t point pr click karvu
+	-> path selection : aakha path ne eksathe move karse
+	-> direct selection : individual points ne select kri move krse
+
+	->shape :
+		koi shape bnavvo hoy to pen tool ma shape select rakhvu(jm jm point add karta jasu tm tm color pn fill thto jase)
+
+	->path : 
+		->simply use for selection purpose
+		->to make path to selection... right click on path and select *make selection* || ctrl + ENTER || in path panel selection thumb pr *ctrl* + click
+		->we can also make path from selection....koi selection tool thi selection bnavelu hoy and ene path ma convert karvu hoy to *right bottom* pr *make path from selection btn pr click karvu*
+		->koi ek path bnavi ne navo path bnavisu to juno path remove thay jse...evu n thva devu hoy to layer panle ni baju ma *path panle* pr click kri j selection krelu che enu default name *work path* ne rename kri devu
+
+=> Clip Mask :
+	Koi ek layer pr circle bnavyu hve e circle ma border vali side pr thodo thodo color add karvo che to nva layer ma e color add karva jasu to e backgournd pr pn affect karse evu n thva deva...
+		-> j nva layer pr work karvu che and jena pr affect thva devu che e banne vachche mouse lay jay ne *alt* press kri *click* karvathi mask bani jase.
+		-> We can also add multiple clip mask
+		-> multiple clip mask ne join karva bdhane select kri ne *right click* kri convert to smart object karvu ||
+		*ctrl + G* kri ne group pn kri sakiye

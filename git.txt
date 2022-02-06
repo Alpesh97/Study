@@ -1,0 +1,232 @@
+*Note*:
+  
+  -> Commit, revert or pull karti vakht e *input text window* open thay to 
+
+      shift + : 
+
+      and pasi *wq* type kri ne enter karvu
+
+      wq = write(save) & quite.
+
+  ->git credential-manager uninstall
+  - git config --global --unset https.proxy
+    git config --global --unset http.proxy
+
+    git config http.proxy http://192.168.10.5:8080
+    git config https.proxy http://192.168.10.5:8080
+
+    git config http.postBuffer 524288000
+
+    This is a powershell security policy, to fix it, run Powershell as administrator and run the following
+
+    (yarn in vscode)PS C:\> Set-ExecutionPolicy RemoteSigned 
+
+*Commands for CMD*:
+
+1) cd..
+  
+  ->koi folder mathi bhar niklva mate
+
+2) cd folder_name
+  
+  ->koi folder ma jva mate
+
+3) ls OR dir
+  
+  -> apne j folder ma chiye tema rahel files nu list show karse
+
+4) mkdir name
+  
+  -> new folder create karva
+
+5) rm name
+  
+  -> file delete karva
+
+6) rmdir name
+  
+  -> folder delete karva
+
+7) cls
+  
+  -> To clear command prompt.
+
+
+*NPM Commands* 
+
+1) npm list -g --depth = 0
+  
+  -> To check list of globally installed packages i our pc.
+
+2) npm outdated -g --depth = 0 
+  
+  -> To check which packages need to update.
+
+3) npm update -g package_name
+  
+  -> To update package globally.
+
+4) npm update -g
+  
+  -> To update all global packages
+
+
+
+* Git *
+
+=> Theory : 
+  
+  -> Git is a distributed version control system.
+  -> It' s system that records changes to our files over time.
+  -> We can recall any specific version of those files at any time.
+  -> many people can easily collaborate on single project.
+
+
+=> Setup and Commands:
+
+1) Download git and install it in your system
+2) git --version
+3) set git name and email using
+
+    git config --global user.name 'name'
+    git config --global user.email 'email'
+
+    OR if(locally set karvu hoy to)
+
+    git config user.name 'name'
+    git config user.email 'email'
+
+    ->To check user name and email: 
+
+        git user.name
+        git user.email
+
+4) initialize git in folder.....that create the repostory in our folder(.git)
+     git  init
+
+      -> When we fire this command it will also create a new defaultly active master branch
+
+5) to check modified files..
+     git status (modified files staging area ma ny hoy to red btavse... hse to green)
+
+6) to add files in stagging area...
+     git add 'file name'    
+     git add . (bdhi j files ne staging area ma eksathe put karva)    
+
+7) to remove files from stagging area...
+     git rm --cached 'file name'  (single file ne remove karva)
+
+     OR
+
+     git reset HEAD -- . (bdhi files ne remove karva)
+
+8) to commit our work (basically is a save point of our work)
+     git commit  -m "description is work"
+
+     OR 
+
+     git commit -a -m 'message'
+
+     OR 
+
+     git commit --amend  (agal ni commit ma changes save karva hoy to)
+
+9) to show commit history
+     git log
+     git log --oneline (to show commit history in shorthand way)
+
+10) undoing things
+  
+  ->There are three methods to Undoing things: 
+
+    i)Chekout commit:
+
+      ->git log --oneline
+
+        ->This command is used to just see the perticular commited code using their commit id.
+
+      ->git checkout 'id' 
+
+        ->The changes made with this command are read only
+
+    ii)Revert commit:  
+
+      ->git revert 'id' 
+
+        ->This command is used to revert at any commiteed point.
+        ->Now if we check our commit's using git log --online, we see that we not acctually deleted that perticullar commit but we just make a new commit whitout that perticular code which we reverted.
+
+    iii)Reset commit:
+
+      ->git reset 'id'
+
+        ->after running this command if we check our commit we see that all the above commit of that particular id was deleted
+        ->But the changes in our code are still same. If we want also delete those code changes with that commit than run
+
+          git reset 'id' --hard
+
+  
+11) braches
+       git branch 'name' (create new branch)
+       git branch -a (to show all branch)
+       git checkout 'branch name' (to change branch)
+       git brach -D 'branch name' (to delete branch...jyare branch master ma merge n kreli hoy tyare)
+       git brach -d 'branch name' (to delete branch...jyare branch master ma merge kreli hoy tyare)
+       git checkout -b 'name' (shorthand way to create and switch the branch)
+
+=> branch merge karva pela j branch ma merge karvu hoy ema switch thvu
+      git merge 'name' (to merge branch)
+
+=> Renaming Git Branch
+  
+      git checkout <old_name>
+      git branch -m <new_name>
+      git push origin -u <new_name>
+      git push origin --delete <old_name>
+
+12) Discard all local changes, but save them for possible re-use later: 
+       git stash
+
+13) Discarding local changes (permanently) to a file: 
+      git checkout -- <file>
+
+14) Discard all local changes to all files permanently:  
+      git reset --hard
+
+15) For fetch all newly created branches
+       git fetch --all
+
+
+
+*Github*
+  
+  ->Is a hosting service for git repositories.
+  ->So bassically github is a place to store your identical working directories or repositories
+
+1) push code(repositories) on github 
+
+    git push 'repo-online-url' master(branch_name)
+
+    -> j branch ne push karvi hoy e branch ma pela switch thvu
+      git push 'github pr create kreli repository ni url' master( or koi biji branch ma push karvu hoy to e branch nu name)
+
+=> have jo ek j repository ma dar vakht e code push karvano hoy to dar vakht e repo. ni url pass n karvi...enu alias bnavi levu...ex
+     git remote add origin 'repo url' (than for push code write below cmd)
+     git push origin master
+
+2) to clone repo from github
+
+      git clone 'repo url'
+
+      -> It means we just copy the all online repository(code) to our local machine.
+      -> Hve change karya pasi code push karva mate origin create karva ni jarur nthi km k clone leti vakht e j repo ni url add kari hse t automatically alias(origin) ma save thay jse.
+
+      ->To check our alias name is set or not:  
+        git remote -v
+
+3) to pull the code
+
+      git pull origin master 
+
+      ->master branch pr koye kai update kri hse to e aapda ma aavi jse
+      ->team ma work karta hoye tyare nvu work start karta pela master branch nu pull lay levu and nvu work nvi branch ma j start karvu and e nvi branch ne github pr j merge request add kri ne merge karvi

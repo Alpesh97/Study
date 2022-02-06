@@ -1,0 +1,38 @@
+API: Application Programming Interface
+
+-> -> As we know that javascript, angular and react kind of things can not connect directly with the database. So, we need a interface that help us to connect to the database
+
+https://www.youtube.com/watch?v=E0Qqpn8ymko&t=338s
+
+-> API is the messenger, that takes requests and tells a system what you want to do, and then returns the response back to you
+
+-> API is just allow applications to communicate with one another.
+
+-> API is not a database. It is an access point to an system that can access a database
+
+ex. - Think of an API as a waiter in a restaurant. Now you are a customer and kitchen is the part of the system which will prepare your order. now what is missing is the critical link to communicate with you and the kitchen and deliver your food back to your table, that's where the waiter or API comes in. The waiter is the messenger that takes your request or order and tells the system, in this case kitchen what to do and then deliver the response back to you, in this case food.
+
+real ex. - zomato or biji koi pn app ma j map use thay che e google map ni api thi data fetch kare
+
+
+What is AJAX?
+	
+	-> Read data from a web server - after a web page has loaded
+	-> Update a web page without reloading the page
+	-> AJAX is not a programming language.
+	-> AJAX is a technique for accessing web servers from a web page.
+	-> AJAX stands for Asynchronous JavaScript And XML.
+
+Ajax methods:	
+
+	-> .success() only gets called if your webserver responds with a 200 OK HTTP header - basically when everything is fine.
+
+	-> .complete() will always get called no matter if the ajax call was successful or not - maybe it outputted errors and returned an error - .complete() will still get called.
+
+
+What is JSON?
+	
+	-> JSON stands for JavaScript Object Notation
+	-> JSON is a lightweight format for storing and transporting data
+	-> JSON is often used when data is sent from a server to a web page
+	-> JSON is "self-describing" and easy to understand

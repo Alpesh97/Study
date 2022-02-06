@@ -1,0 +1,123 @@
+*Difference between flexbox and grid*:
+
+ -> https://www.srijan.net/resources/blog/css-grid-vs-flexbox
+
+ *Properties*:
+
+ 1. display:grid
+
+ 	-> give this property to the main container of our grid items
+
+2. grid-template-columns
+	
+	-> Used to define the width of our column as per requirements and anathi j define kri sakiye k ek row ni andar ketli column apde joye che. jo multiple grid items hse to jetli column apde ek row ma set kri hase e thse ane bakini grid items niche wrap thay jse
+	-> there are multiple ways to give column width:
+
+		1. grid-template-columns: 33.33% 33.33% 33.33%     // We can give as many columns as we want in one row
+		2. grid-template-columns: 1fr 1fr 1fr		// It is better to use fractional unit. It is gives relative width
+		3. grid-template-columns: repeat(3, 1fr)    // It will repeat 1fr three times. more ex.- repeat(3, 1fr 2fr)
+
+3. grid-template-rows
+	
+	-> Used to define height of row and ketli row joye che e pn define kri sakiye.
+	-> We don't use this property as much...km k row ni height automatic set thti hoy che ne apde e j use kriye chiye
+	-> there are multiple ways to give height of row:	
+
+		1. grid-template-rows: 200px 200px 200px  // static height of multiple rows
+		2. grid-template-rows: repeat(3, 200px)  // shorthand property for static height
+		3. grid-template-rows: repeat(3, minmax(200px, auto))  // It gives minimum height of 200px and maximum height as per content and repeat this process after 3 rows. ama jo khali peli row ma j content hse to baki ni bacheli 2 row ma 200px ni height sathe khali space dekhase
+
+4. grid-auto-rows
+	
+	-> Used to define height of grid items
+	-> there are multiple ways to give height to grid items:
+
+		1. grid-auto-rows: 200px    // static height
+		2. grid-auto-rows: minmax(200px, auto)  // It gives minimum height of 200px and maximum height as per content
+
+5. grid-column-gap
+	
+	-> Used to define gap between columns
+
+	ex.- grid-column-gap: 15px
+
+6. grid-row-gap
+	
+	-> Used to define gap between rows
+
+	ex.- grid-row-gap: 15px
+
+5. grid-gap
+	
+	-> Used when gap between row and columns are equal
+
+	ex.- grid-gap: 15px
+
+6. grid lines:
+	
+	-> Used to define where to start and where to end our grid item.
+	-> jetli grid column and row hoy enathi grid line ek vdhare hoy.
+	ex.- 
+
+	grid-column-start: 1	// peli column grid line thi start thse position
+	grid-column-end: 3      // tiji column grid line e end thse position
+
+	grid-column: 1/3	//shorthand property for above two
+
+	grid-row-start: 1	// peli row grid line thi start thse position
+	grid-row-end: 3     // tiji row grid line e end thse position
+
+	grid-row: 1/3	//shorthand property for above two
+
+	-> Inshort grid item ni width,height and order pn change kri sakiye anathi
+
+7. Aligning & Justifying Items:
+	
+	-> gird item ne vertically and horizontally start,end k center pr set karva hoy tyare use thay
+	-> aa property na use thi grid items ni height or width jetli apeli hse etli or content jetli thay jse
+
+	ex.- align-items: start		//default value = stretch
+		 justify-items: end 	//default value = stretch
+
+	-> we can also give these properties in perticuller grid items:
+
+		ex.- align-self: start 
+			 justify-self: center
+
+8. Grid Areas:
+	
+	-> grid area thi pn strucutre set kri sakiye j rite grid-column and grid-row thi kri sakiye
+	ex.- 
+
+		-> grid item ne pela koi name api devanu
+
+			ex.- 
+
+			header{
+			   grid-ares: header // koi pn name api sakiye
+			}
+
+			aside{
+			   grid-ares: aside  // koi pn name api sakiye
+			}
+
+			main{
+			   grid-ares: main  // koi pn name api sakiye
+			}
+
+			footer{
+			   grid-ares: myFooter  // koi pn name api sakiye
+			}
+
+		-> pasi grid container ma j rite rite structure set karvu hoy e rite set karvu
+
+			ex.- 
+
+			.grid-container{
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-area:
+				"header header header"  //aapde upar ek row ma 3 row rakhi che to header ne full width ma set karva mate
+				"aside . main"	    // 1fr ma aside, 1fr ma blank space and 1fr ma main set karse
+				"footer footer footer"		// footer parent container jetli full width ma set karse
+			}
+

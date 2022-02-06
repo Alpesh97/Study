@@ -1,0 +1,135 @@
+What is Library and Framework:-
+
+=> Library:
+	->library is a some set of code which we add to our project and call it whenever we want to used it.
+	that means in library we have to call the code.
+	->it is developed with integration of any technology. (ex. javascript mathi jquery, ReactJs, etc.)
+	->less number of rules
+	->bdho control code pase j hoy...library just aapde call kraviye tyare execute thay ej baki aapdo code separatly run thya kre
+
+	->real time ex. - Work from home
+
+=> Framework:
+	->It is used when we want to develop entire application in it
+	->in this, framework is calling to your code.
+	->more number of rules
+	->bdho control framework ni pase j hoy..aapde ena rules mujab j code karvo pde
+
+	->real time ex. - Work at office
+
+
+3 types of mobile app:-
+
+	=>Web Apps
+		->Built using Html/CSS/JavaScrip
+		->Run inside a browser
+		->Built like a regular website
+		->Designed to look good in mobile devices
+		->Used in all platform like android,ios,blackberry.
+
+		Disadvantages:
+			->Need a browser to run
+			->Slower than native apps
+			->Can not submitted to app store or play store
+
+	=>Native Apps
+		->Most Common type of mobile app
+		->Built for specific platform that's why it is very fast
+		->Built using native programming languages ex.-
+			Android app coded in Java it uses the SDK for that platform
+			iOS app codded in Swift or sometime objective-c.
+		->Interact with device utilities(any feature of the phone like:carema location,storage,etc.)
+
+		Disadvantages:
+			->Single application (means Java ma bnaveli androin app android device ma j work karse)
+
+	=>Hybrid Apps
+		->Combination of Web and Native apps
+		->Used HTML/CSS/JavaScript. So it's easy to build
+		->Single app for all platforms
+		->No browser needed
+		->Interact with device utilities(any feature of the phone like:carema location,storage,etc.)
+
+		Disadvantages:
+			->Slower than Native apps (because native app single platforms mate j bne che)
+
+
+MVC framework:-
+	->Is an architectural pattern that separates the application layer into Model,View and Controller
+	means organized way to write a code
+	->In this we divide whole code into three part:
+
+		Modal: In this we perform *Database* oparation.
+
+		View: In this we create *Design* (HTML/CSS)
+
+		Controller: In this we write our *Logic*(c= a + b) and it Provide Link between Modal and View.
+
+
+What is DOM:-
+	->When a web page is loaded, the browser creates a *DOM* of the page and In that elements are organized as a tree structure.
+	->the DOM is just another way to represent your HTML document
+
+	where D = Document (means aapdu aakhu html page),
+		  O = Object (body,head,main,etc. aa bdha tag),
+		  M = Modal ()
+
+What is virtual DOM:-
+	->A virtual DOM only look at the differences between the previous and current HTML and changes the par that required to be updated.(meand HTML ma koi changes karsu to dom aakhu nvu ny bane..just j changes karya hse tya j update karse)
+	->It updates faster.
+	->Can’t directly update HTML
+	->Updates the JSX if element updates
+	->DOM manipulation is very easy
+	->No memory wastage
+
+What is real DOM:-
+	->This will update the entire tree structure of HTML tags until it reaches the data to be updated(means koi ek jagyaye change karyo hse to aakhu dom tree pelethi banse)
+	->It updates slow
+	->Can directly update HTML
+	->Creates a new DOM if element updates
+	->DOM manipulation is very expensive
+	->Too much of memory wastage
+
+
+Diffrence between Vue.js/React/Angular
+
+=> Vue.js:
+	->Is a front-end JavaScript framework
+	->Used to developed Advanced SPA and Native apps
+	->Developed by *Evan you*, an ex google employee
+	->Is focused on the *view* and *modal* layer of the MVC framework
+	->ex.- Alibaba,grammarly,etc.
+		Performace:	
+			-> It uses *virtual DOM*
+
+=> React js:(React)
+	->Is a frontend JavaScript library
+	->Used to develop Javascript driven dynamic web apps and SPA
+	->Developed by *Facebook*
+	->Is represent the *view* part if the MVC framework
+	->Server-side rendering
+	->One-way data binding
+	->ex.- fb,inta,what's app,netflix,dropbox,etc.
+		Performace:	
+			-> It uses *virtual DOM*
+
+	*What is React Native*:
+		->Is a framework for building Native application using Javascript.
+		->Is a mobile framework that allows developers to use React on platforms like Android and iOS.
+		->Component bnavela padya j hoy just eno use karvano hoy
+
+=> Angular:
+	->Is a front-end JavaScript framework
+	->Primary motive is to developed single page aaplication
+	means The entire page is broken down into several components. where in each components performs a specific task. ex.- one component handles the login other is main content etc. 
+	->Alos developed the hybrid application using ionic,etc.
+	->Developed by *Google*
+	->Is a Complete MVC framework
+	->Client-side rendering
+	->Two-way data binding
+	->ex.- nike,sony,upwork,hbo,etc.
+		Performace:	
+			-> It uses *real DOM*
+
+=> Vue js:-
+	Is a front-end framework such as angular. Used to create javascript drive web application

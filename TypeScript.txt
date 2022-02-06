@@ -1,0 +1,12 @@
+What is Typescript :
+	->Is a programming language which can be used to as an alternative of JavaScript.
+	->Basically is a superset of Javascript(means basically it extends the JavaScript with new feature and syntax)
+	->.ts is the extenstion for the typescipt
+
+Install Typescript :
+	-> npm install -g typescript
+
+Compile Typescript :
+	-> tsc '.ts filename' '.ss filename' OR (banne file na name same hoy to)
+	   tsc '.ts filename' OR (jo darek ts file na chage vakht e automatic js ma convert karvu hoy to(automatic complie))
+	   tsc '.ts filename' -w (where w for Watch)

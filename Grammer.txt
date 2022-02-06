@@ -1,0 +1,3 @@
+=> How many alphabet in english?
+	
+	->There is only one 1 alphabet in english which consist 26 letters.

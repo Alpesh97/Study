@@ -1,0 +1,144 @@
+* px/em/rem * : 
+	https://www.sitepoint.com/understanding-and-using-rem-units-in-css/
+	1)px: 
+
+		->pixel(px) is a static measurement unit.
+
+	2)em:
+
+		->em is a relative measurement unit
+		->Is relative to the font size of it's direct or nearest parent.
+
+		-> calculation:
+
+			if html>section>container>h1
+
+			html {
+			  font-size: 16px; 
+			}		
+
+			section {
+				font-size: 2em; (16 * 2 = 32px)
+			}
+
+			container {
+				font-size: 1.5em; (32 * 1.5 = 48px)
+			}
+
+			h1 {
+				font-size: 2em; (48 * 2 = 96px)
+			}
+
+	3)rem	
+
+		->rem is a relative measurement unit
+		->Is only relative to the html(root) font-size
+
+		-> calculation:
+
+			html {
+			  font-size: 18px;
+			}
+
+			h1{
+				font-size: 2rem;	(2 * 18 = 36px)
+			}
+
+
+-> https://chiamakaikeanyi.dev/sizing-in-css-px-vs-em-vs-rem/#:~:text=Pixel%20(%20px%20)%20is%20a%20commonly,the%20value%20of%20absolute%20units.&text=Element%20(%20em%20)%20and%20Root%20element,px%20unit%20by%20the%20browser.
+
+
+html {
+ font-size: 62.5%; // 1rem = 10px
+
+ @include breakpoint(medium) {
+   font-size: 56.25%;  // 1rem = 9px
+ }
+
+ @include breakpoint(small) {
+   font-size: 50%;  // 1rem = 8px
+ }
+}
+
+
+Note:
+	
+	1)Older safari version does not support transition : all 0.3s;
+		so instead of all simply use name of property in which you want to add transition.
+
+
+* align content in flex *
+	
+	-> same as align items but it work with flex-direction: row and at that time align-items does't work.
+
+* Translate(-50%,-50%) *
+	
+	-> koi element ne top and left thi 50% thi set karsu to e element na origin-point ne center ma lavse ny k akha element na content ne...akha element na content ne center ma lavva mate Translate(-50%,-50%) karvu.
+
+* Global value *
+	
+	-> left = 0%
+	-> top = 0%
+	-> right = 100%
+	-> bottom = 100%
+	-> center = 50%
+
+* what is difference between the width and max-width WHEN using relative units (%)? *
+
+	-> width basically assigns a definite value to an element like: this element is 80% wide, no more no less.
+	-> With max-width it basically says: listen, this element's width CANNOT be more than 80%. BUT it can be smaller.
+	-> there's no difference when I set the image max-width to 100% OR width:100%.
+
+* text-indent *
+	
+	-> It is a Other option of font-size: 0 (means koi element ma only icon show karvo hoy ane text ne show n karva hoy to text-indent:-100000px; aa type ni property pn api sakiye)
+
+
+* FlexBox * :
+
+	example link: https://www.oreilly.com/library/view/flexbox-in-css/9781491981474/ch04.html
+				: https://brolik.com/blog/when-to-use-flexbox/
+	
+	-> There are some list of property which is used with flexbox
+
+		1) flex-wrap: wrap-reverse
+
+			->means element wrap karse but normally element niche padtu hoy but aa case ma t upar jase
+
+		2) flex-grow:
+
+			<div class="flex-container" style="display: flex;">
+			  <div style="flex-grow: 1">1</div>
+			  <div style="flex-grow: 1">2</div>
+			  <div style="flex-grow: 8">3</div>
+			</div>
+
+			->means container ni jetli width hse eni 8 ma bhag ni width 3rd number no div lese baki ni width j vadhse e bakina banne div sarkha bhage vehsi lese.
+
+		3) flex-shrink:
+
+			<div class="flex-container" style="display: flex;">
+			  <div style="flex-grow: 1">1</div>
+			  <div style="flex-grow: 1; flex-shrink: 5;">2</div>
+			  <div style="flex-grow: 1">3</div>
+			</div>
+
+			->means jyare window ne resize(nani) karsu tyare 2nd number no div bija banne div karta 5 gano vdhare nano thto jase.
+
+		4) flex-basis:
+
+			<div class="flex-container" style="display: flex;">
+			  <div style="flex-basis: 100px">1</div>
+			  <div style="flex-basis: 100px">2</div>
+			  <div style="flex-basis: 100px">3</div>
+			</div>	
+
+			->means jyare page load thse tyare 3ney div ni initial width 100px hse
+
+		5) flex:	
+
+			->Is a short-hand property for above three.
+
+				flex:1 0 200px  ->means flex-grow:1;flex-shrink:0;flex-basis:200px;
+
+				flex:1  ->means flex-grow:1;flex-shrink:1;flex-basis:0;

@@ -1,0 +1,14 @@
+
+* stopPropagation * :
+	
+	-> parent na default behaviour ne stop karse (means chils ne jo stopPropagation aapisu to tena parent pr j kn click or biji koi event lagti hse e ny lage)
+
+* preventDefault *
+	
+	-> koi element nu basic behaviour stop karse (ex.- anchor tag nu default behaviour mujab tena pr click krisu to e page ne redirec karse...but evu n karva devu hoy to ene preventDefault aapi sakiye)
+
+* return false *	
+	
+	-> preventDefault and stopPropagation banne eksathe use karva hoy to banne lakhvani jagyaye khali return false lakhi sakiye
+
+*  * 

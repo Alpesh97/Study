@@ -1,0 +1,28 @@
+*Find your website*
+
+1) category wise search...catergory ni pn sub category
+2) review for website 
+3) country wise filtering
+4) youtube channel or app ni category
+
+https://www.similarweb.com/
+https://www.kadaza.com/
+
+*jetla pn custom demos che eni ek site*  react ma bnavvi
+
+->after one year
+
+react job find on:
+glassdoor
+linkedIn
+clutch
+https://www.simplyhired.co.in/
+
+project name: demo pen
+
+1) header
+2) banner
+3) pen list
+4) about
+5) contact
+6) footer

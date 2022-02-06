@@ -1,0 +1,890 @@
+HTML: 
+
+1) Tim Berners Lee, the father of HTML
+
+2) HTML is stands for Hypertext Markup Language
+
+3) What are void elements in HTML?
+
+	->HTML elements which do not have closing tags or do not need to be closed are Void elements. For Example <br />, <img />, <hr />, etc.
+
+4) ID vs Class
+
+	->most browsers will in fact apply the specified styles to all elements given the same id. However, this is considered bad practice as it defies the W3C spec.
+
+	->ID are unique, It means it is the best practice to do not use same id multiple time in same page.
+	->In case of class we can use same class multiple time
+
+	->same id ma js first vala ne j lagse
+
+6) List the name of HTML5 tags(semantic elements)
+	
+	->https://www.w3schools.com/html/html5_semantic_elements.asp
+
+7) html tag vs elements vs attribute
+	
+	->https://www.geeksforgeeks.org/tags-vs-elements-vs-attributes-in-html/
+
+8) How many H1 tag we should use in a page?
+	
+	-> You can use as many as you like, but best practice for SEO Your website should have only one h1 tag per page.
+
+9) SEO(search engine optimization)
+	
+	-> It means the process of improving your site to increase its visibility when people search for products or services related to your business in Google, Bing, and other search engines.
+
+10) Which image formate will you prefer most and why?
+	
+	-> Image formate is depend on requirements, if we want transparent backgound than we must use png image, Otherwise we used jpg formate because it has smaller size than png
+
+	->SVG:(Scalable Vector Graphics)
+
+		SVG supports animation, transparency, gradients, and is easily scalable without losing quality. 
+
+11) What is the use of Doctype?
+	
+	->Doctype stands for Document Type Declaration. It informs the web browser about the type and version of HTML
+
+12) What are the different meta tag and which mete tag used to make page responsive?
+	
+	-> The <meta> tag defines metadata about an HTML document. Metadata is data (information) about data.
+	
+	-> <meta charset="UTF-8">
+		<meta name="description" content="Free Web tutorials">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="author" content="John Doe">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+13) List of block element and inline elements
+	
+	-> block elements: <address><article><aside><blockquote><canvas><dd><div><dl><dt><fieldset><figcaption><figure><footer><form><h1>-<h6><header><hr><li><main><nav><noscript><ol><p><pre><section><table><tfoot><ul><video>
+
+	-> inline elements: <a><abbr><acronym><b><bdo><big><br><button><cite><code><dfn><em><i><img><input><kbd><label><map><object><output><q><samp><script><select><small><span><strong><sub><sup><textarea><time><tt><var>
+
+14) In HTML5, which tag or tags embed a webpage inside of a webpage? or What is the used of <iframe> tag?
+
+	-> <iframe>	
+
+15) Which tag is the root element of an HTML document?
+	
+	-> <html> 
+
+16) html5 vs html4
+	
+	-> https://www.geeksforgeeks.org/difference-between-html-and-html5/
+
+17) data-toggle
+	
+	-> The data-toggle is an HTML-5 data attribute defined in Bootstrap.
+	-> It is used in Bootstrap to define collapsible content, modal, dropdown, scrollspy, tab, tooltip, etc.
+
+	ex. data-toggle="collapse"
+
+	->https://www.geeksforgeeks.org/data-toggle-attributes-in-twitter-bootstrap/
+
+18) data-target
+	
+	-> The data-target is also an HTML-5 data attribute defined in Bootstrap.
+	-> It is used to specifies the target element.
+	-> It accepts a CSS selector that points to the relevant element.
+
+	ex. data-target="#myModal"
+
+	->https://stackoverflow.com/questions/21944735/what-is-the-data-target-attribute-in-bootstrap-3
+
+19) bootstap3 vs 4 vs 5
+	
+	->https://tutorial.techaltum.com/bootstrap.html
+
+	-> bootstap grid sizes
+
+		-> https://getbootstrap.com/docs/5.0/layout/grid/
+
+20) if flex-direction:column than 
+		
+	for horizontal center: 
+	-> align-items: center; defautl... justify-content: center;
+
+	for vertical center: 
+	-> justify-content: center; defautl... align-items: center;
+
+21) flex order alternative
+	
+	-> float: right;
+	-> https://webdesign.tutsplus.com/tutorials/a-few-different-css-methods-for-column-ordering--cms-27079
+
+22) special character for copyright,etc.
+	
+	-> https://www.html.am/reference/html-special-characters.cfm
+
+23) bootstap grid 5 equal width column
+	
+	-> https://coderwall.com/p/wo1f-g/five-equal-columns-in-bootstrap-3
+	-> https://www.quora.com/How-do-I-make-5-columns-using-the-grid-system-in-Bootstrap
+
+24) click event -> settimeout > addclass
+	
+	-> https://stackoverflow.com/questions/22087607/addclass-not-working-within-settimeout-function
+
+25) select only third li
+	
+	-> https://stackoverflow.com/questions/3438898/select-only-third-li
+
+26) settimeout vs setinterval
+	
+	-> https://stackoverflow.com/questions/2696692/setinterval-vs-settimeout#:~:text=setTimeout(expression%2C%20timeout)%3B%20runs,the%20timeout%20between%20each%20repeat.&text=setInterval%20fires%20again%20and%20again,while%20setTimeout%20only%20fires%20once.
+
+27) What is DOM?
+	
+	What is DOM:-
+	->When a web page is loaded, the browser creates a *DOM* of the page and In that elements are organized as a tree structure.
+	->the DOM is just another way to represent your HTML document
+
+	where D = Document (means aapdu aakhu html page),
+		  O = Object (body,head,main,etc. aa bdha tag),
+		  M = Modal ()
+
+	What is virtual DOM:-
+		->A virtual DOM only look at the differences between the previous and current HTML and changes the par that required to be updated.(meand HTML ma koi changes karsu to dom aakhu nvu ny bane..just j changes karya hse tya j update karse)
+		->It updates faster.
+		->Can’t directly update HTML
+		->Updates the JSX if element updates
+		->DOM manipulation is very easy
+		->No memory wastage
+
+	What is real DOM:-
+		->This will update the entire tree structure of HTML tags until it reaches the data to be updated(means koi ek jagyaye change karyo hse to aakhu dom tree pelethi banse)
+		->It updates slow
+		->Can directly update HTML
+		->Creates a new DOM if element updates
+		->DOM manipulation is very expensive
+		->Too much of memory wastage
+
+28) What is DOM traversing?
+	
+	-> DOM traversing means "find" (or select) HTML elements based on their relation to other elements. 
+	-> It Start with one selection and move through that selection until you reach the elements you desire.
+
+29) DOM traversing methods in jQuery
+	
+	-> https://www.w3schools.com/jquery/jquery_ref_traversing.asp
+
+30) HTML vs DHTML
+	
+	-> https://www.javatpoint.com/dhtml
+
+31) UI developer vs html developer
+	
+	-> An HTML or web developer's job is to convert PSD to HTML and it has less interactivity with functionality.
+	-> A UI developer job is also to convert PSD to HTML but it has also responsible for its functionality(like: animations, dynamic websites, frontend tools like angular, react).
+
+	-> Front-end developer builds websites using HTML, CSS, JavaScript and other common client side technologies.
+	-> UI-Developer Similarly uses HTML, CSS, JavaScript and other client side technologies. There is less emphasis on scripting languages like JavaScript and more emphasis on HTML and CSS
+
+
+32) Table grid
+	
+	-> https://www.w3schools.com/html/html_tables.asp
+
+33) slick all options..customm arrows	
+	
+	-> https://kenwheeler.github.io/slick/
+
+
+34) flex advantages and flex vs floats
+	
+	-> https://code.likeagirl.io/css-layouts-understanding-the-differences-between-grid-flex-and-float-1d6ed96d3182
+
+
+35) <meta charset="UTF-8">
+	
+	-> The charset attribute specifies the character encoding for the HTML document.
+
+	-> The HTML5 specification encourages web developers to use the UTF-8 character set, which covers almost all of the characters and symbols in the world!
+
+36) jquery : 3.6.0
+    slick: 1.8.1
+    bootstrap: 5.1.3
+
+37) <link rel="" />
+	
+	-> The rel attribute defines the relationship between a linked resource and the current document.
+	-> Valid on <link>, <a>, <area>, and <form>
+
+38) target in <a>
+	
+	-> _blank	   Opens the linked document in a new window or tab
+	   _self	   Opens the linked document in the same frame as it was clicked (this is default)
+	   _parent	   Opens the linked document in the parent frame
+	   _top	       Opens the linked document in the full body of the window
+	   framename   Opens the linked document in the named iframe
+
+
+fadeIn,fadeOut ma kai css lage
+slideDown,toggle
+toggle vs addclass
+API call in angular and react
+can we use service inside a another service..angular
+find most used text in given str in js
+javascript array object(add,remove,add at specific index,dynamically add and many other things)
+
+CSS:
+
+-3) What is Gutters space?
+	
+	-> Gutters are the gaps between column content.
+	-> Bootstrap5 has 12px gutter space
+	-> Bootstrap4 has 15px gutter space
+
+-2) css file read karvi
+
+-1) css selectors:	
+	
+	-> https://www.w3schools.com/cssref/css_selectors.asp
+
+0) Animation: 
+	
+	-> https://www.w3schools.com/css/css3_animations.asp
+
+1) CSS3 properties:
+	
+	-> CSS3 Properties You Need to Be Familiar With
+		border-radius.
+		box-shadow.
+		text-shadow.
+		text-overflow: ellipsis
+		Flexible Box Model.
+
+2) Difference between display block and inline-block and inline
+	
+	->display: inline-block, Does not add a line-break after the element, so the element can sit next to other elements.
+	->display: block, Add a line-break after the element. It starts on a new line, and takes up the whole width
+	->display: inline, Any height and width properties will have no effect. and if we apply padding/margin then it reflect only for left/right not for top/bottom.
+
+3) How you make table responsive? 
+	
+	-> There is two way to make table responsive
+
+		1. Wrap table in div element and give overflow-x: auto to that div element.
+		2. Using data-* attribute
+
+		https://codepen.io/AllThingsSmitty/pen/MyqmdM
+
+4) what is responsive web design and what are the standard breakpoints?
+	
+	-> Responsive web design is about creating web pages that look good on all devices!
+	->  >=576px
+		>=768px
+		>=992px
+		>=1200px
+		>=1400px
+
+5) What is sass and less?
+	
+	-> Syntactically Awesome Stylesheets (Sass) and Leaner CSS (LESS) are both CSS preprocessors.
+	They are special stylesheet extensions that make designing easier and more efficient. Both Sass and LESS compile into CSS stylesheets so that browsers can read them.
+
+	-> scss is a syntax extension for sass and 
+
+	-> The only difference I found between sass and less is:
+		SASS is based on Ruby, while LESS uses JavaScript
+		Sass uses $ for variables whereas less uses @
+
+6) What is mixin?
+	
+	-> Mixins allow you to define styles that can be re-used throughout your stylesheet.
+	eg.- 
+		@mixin scale($scale) {
+		    -moz-transform: scale($scale);
+		    -o-transform: scale($scale);
+		    -ms-transform: scale($scale);
+		    -webkit-transform: scale($scale);
+		    transform: scale($scale);
+		}
+
+		use: @include scale(1.5);
+
+		@mixin transition($transition) {
+		    transition: $transition;
+		    -o-transition: $transition;
+		    -ms-transition: $transition;
+		    -webkit-transition: $transition;
+		    -moz-transition: $transition;
+		}
+
+		use: @include transition(all 0.3s);
+
+	Difference between mixin and extend:
+
+		-> https://kirillibrahim.medium.com/sass-mixin-vs-extend-ac4dfb9892c4
+		-> https://www.w3schools.com/sass/sass_extend.php
+		-> https://sass-lang.com/documentation/at-rules/extend
+
+7) What is new in Bootstrap5?
+	
+	->  The following are some of the changes in Bootstrap 5:
+	    jQuery was removed
+		Switch to Vanilla JavaScript
+		Responsive Font Sizes
+		Drop Internet Explorer 10 and 11 support
+		Custom SVG icon library
+
+8) Difference between margin and padding
+	
+	-> The outer space of an element i.e. margin is the space outside the border. 
+	   The inner space of an element i.e. padding is space inside the element's border
+
+9) Which method we used to load custom fonts
+	
+	-> @font-face
+
+	@font-face {
+	  font-family: "Open Sans";
+	  src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
+	       url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
+	}
+
+
+jQuery : 
+
+1) What is the difference between ready and load?
+	
+	-> onload function will run once the entire page(images, iframes, stylesheets,etc) are loaded.
+	-> ready event fires before all images,iframes etc. are loaded, but after the whole DOM itself is ready.
+
+2) At where do you include js file in html?
+	
+	-> We can add a js file in HTML whereas we like, but we know that html follow top to bottom approach so it is best practice to add js file before body closing tag.
+
+3) List the event or methods of jQuery.
+	
+	-> click, mouseenter, mouseleave, keyup, keydown, etc.
+
+4) What is a different between on click and click event?
+
+	-> click events only work when element gets rendered and are only attached to elements loaded when the DOM is ready. 
+	-> on events are dynamically attached to DOM elements, which is helpful when you want to attach an event to DOM elements that are rendered on ajax request or something else (after the DOM is ready)
+
+5) What is jQuery?
+	
+	-> jQuery is a JavaScript library.
+	-> Using it's shorter synatx we can easily Travers DOM tree, make css animation and also easily handle events.
+
+4) What is the correct way to check how many paragraphs exist on a page using jQuery?
+	
+	-> $('p').length
+
+5) Why it is better to use Jquery instead of $
+	
+	-> As we already know jQuery uses the $ sign as a shortcut for jQuery.
+  	-> There are many other popular JavaScript frameworks like: Angular, Backbone, Ember, Knockout, and more which are also used $ sign as a shortcut.
+  	-> So, it is better to use jQuery instead of $ to avoid conflicts.
+
+  	$.noConflict();
+	jQuery(document).ready(function(){
+	  jQuery("button").click(function(){
+	    jQuery("p").text("jQuery is still working!");
+	  });
+	});
+
+	or
+
+	var jq = $.noConflict();
+	jq(document).ready(function(){
+	  jq("button").click(function(){
+	    jq("p").text("jQuery is still working!");
+	  });
+	});
+
+6) Difference between javascript and jquery.
+	
+	-> https://www.geeksforgeeks.org/difference-between-javascript-and-jquery/
+
+7) parent vs parents vs closest
+
+	-> https://www.tutorialspoint.com/What-is-the-difference-between-closest-and-parents-methods-in-jQuery
+
+
+Javascript:
+
+$(document).keydown(function (event) {
+    if (event.keyCode == 123) { // Prevent F12
+        return false;
+    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+        return false;
+    }
+});
+Prevent Right Click > Inspect Element
+
+$(document).on("contextmenu", function (e) {        
+    e.preventDefault();
+});
+
+  // running car
+$('.running-vehicles-block').slick({
+ speed: 5000,
+ autoplay: true,
+ autoplaySpeed: 0,
+ centerMode: true,
+ cssEase: 'linear',
+ slidesToShow: 1,
+ slidesToScroll: 1,
+ variableWidth: true,
+ infinite: true,
+ arrows: false,
+ dots: false,
+ pauseOnHover: false,
+ pauseOnFocus: false,
+ draggable: false,
+ touchMove: false
+});
+
+new Swiper('.featured-client-slider', {
+            slidesPerView: 5,
+            spaceBetween: 40,
+            freeMode: true,
+
+
+ stroke-dashoffset: 380px;
+ stroke-dasharray: 380px, 380px;
+
+ scrub:true
+
+
+0) Javascript Book 
+	
+1) What is JavaScript?
+	
+	-> JavaScript is a scripting language. It Adds the *behaviour and interactivity* of your webpage.
+
+2) Scripting && Programming && Markup Language :
+	
+	=> Scripting language : 
+		->Scripting languages are mostly used in web applications.
+		->Compilation is not required. That's why it run faster.
+		->Scripting languages can be divided into two categories:
+		 	->Server side scripting languages are: JavaScript, PHP etc. 
+		 	->Client side scripting languages are: JavaScript, AJAX, jQuery etc.
+		->All scripting languages are programming language
+
+	=> Programming language : 
+		->Is main language, used to create a software.
+			ex.- Java,C,C++,etc.
+		->All programming languages are not scripting language.
+		->Compilation is required.
+
+	=> Markup language : 
+		->It used to Create a data structure or website structure.
+			ex.- HTML,xml.
+
+3) https://www.interviewbit.com/javascript-interview-questions/
+
+4) What is defer and async in script tag
+	
+	-> https://flaviocopes.com/javascript-async-defer/
+
+5) Difference between null and undefine
+	
+	-> Null means an empty or non-existent value.
+	-> undefined means a variable has been declared but not defined yet.
+
+
+UX(User experience) tools:
+	
+1) -> I have basic knowledge of Photoshop, Illustrator and XD. (zeplin, avocode, mockplus, photopea, etc.)
+   -> I can extract assets and styles from it and also able to modify that.
+
+2) Up-to-date knowledge of design software like Adobe Illustrator and Photoshop
+
+
+React: 17.0.2 (3000:port)
+
+	-> I have done one projects in React called Wymap.
+	-> In this project my responsibilities is to design user interface(UI) using material ui theme.
+
+	https://www.wymap.com.au/#about
+
+	1) Project Name: Wymap
+
+    Responsibilities: In this project, I have designed a customer portal as well as an admin portal.
+
+    Project Description: Basically, this site is used for the transportation and shipment of goods via an air carrier
+
+
+Material UI theme:
+	
+	-> 
+
+
+1) What is React?
+
+	->React is a front-end JavaScript library developed by Facebook in 2011.
+	->It follows the component based approach which helps in building reusable UI components.
+	->It is used for developing complex and interactive web and mobile UI.
+
+2) What are the features of React? 
+
+	->Major features of React are listed below:
+
+	1. It uses the virtual DOM instead of the real DOM.
+	2. It uses server-side rendering.
+	3. It follows uni-directional data flow or data binding.
+
+3) What is JSX?
+
+	->JSX is a shorthand for JavaScript XML. 
+	->JSX is an HTML-like syntax that let’s developers write HTML style code in JavaScript
+	->Below is an example of JSX:
+
+	render(){
+	    return(        
+			<div>
+				<h1> Hello World from Edureka!!</h1>
+	        </div>
+	    );
+	}
+
+4) Why can’t browsers read JSX?
+	
+	->Browsers can only read JavaScript objects but JSX in not a regular JavaScript object. Thus to enable a browser to read JSX, first, we need to transform JSX file into a JavaScript object using JSX transformers like Babel and then pass it to the browser.
+
+5) What is component in React?
+	
+	->A Component is one of the core building blocks of React.
+	->In react everythings is based on components. 
+	->Components in React basically return a piece of JSX code that tells what should be rendered on the screen. 
+
+6) What is the purpose of render() function in react.js?
+	
+	->Render function in react is used to return the HTML you want to display in a component.
+
+	import React from 'react' 
+ 
+	export default function App(){
+	   render (){ 
+	      return ( 
+	         <h1>Hello</h1> 
+	      ) 
+	   } 
+	} 
+
+	->Every Render function contains a return statement
+
+7) WHAT’S THE MAIN DIFFERENCE BETWEEN PROPS AND STATE?
+	
+	-> “State” describes a default data value in a React component that can change over time (usually based on user actions that call for changes in a UI).
+
+	-> “Props” (or properties) describe the way a React component is configured.
+	-> Props do not change.
+	-> React allows us to pass information to a Component using something called props (stands for properties). Props are basically kind of global variable or object.
+
+		ex.-
+
+			import React from 'react';
+			import ReactDOM from 'react-dom';
+
+			export default function DemoComponent(){
+			    render(){
+			        return(
+			                <div>
+			                    {/*accessing information from props */}
+			                    <h2>Hello {this.props.user}</h2>
+			                </div>
+			            );
+			    }
+			}
+			 
+			ReactDOM.render(
+			    // passing props
+			    <DemoComponent user = "Alpesh Baraiya" />,
+			    document.getElementById("root")
+			);
+
+			o/p: - Hello Alpesh Baraiya
+
+8) What are the advantages of React?
+	
+	->Increased application performance via the Virtual DOM model
+	->Improved coding efficiency with JSX
+	->The ability to reuse components across multiple projects
+
+9) What are the limitations of React?
+	
+	->React only focus on the view part of MVC i.e. UI of the web application
+	->Poor Documentation
+
+
+Angular: 12.2.8 (4200:port)
+
+	-> Honestly, I worked on angular as a web developer. So, I haven't chance to practice those things so I only know that all the things in a theoretical way.
+
+	-> Actually sir I have worked on 2 project on angular and in both of that project my responsibility is only to Design is UI from the given PSD. so, I haven't get chance to learn about api and backend stuffs.
+	
+	-> I have did one project in Angular
+	-> In this project my responsibilities is to design user interface(UI) using Angular material theme.
+
+	1) Project Name: MutahMarriage
+
+    Responsibilities: In this project, I have designed a customer portal.
+
+    Project Description: Basically, It's a matrimonial site for Shia Muslims.
+
+0) What is new in Angular 12?
+	
+	-> https://www.infoworld.com/article/3607428/whats-new-in-angular-12.html
+	
+1) What is Angular and Why Angular?
+	
+	->Angular is not a programming language like Javascript or Typescript. 
+	->Angular is a front-end or client-side Framework, which needs a programming language like Typescript. 
+	->Angular is a client-side framework. It means that it runs on the client-side or user's browser and not on a Web Server (like java/python/ruby/vb.net run). 
+
+	->	VERSION	 STATUS	  RELEASED	     ACTIVE ENDS	  LTS ENDS
+	    ^12.0.0	 Active	 May 12, 2021	Nov 12, 2021	Nov 12, 2022
+
+2) Name the building blocks of Angular.
+
+	-> The Angular application is made using the following: 
+
+		Modules
+
+		Component
+
+		Template
+
+		Directives
+
+		Data Binding
+
+		Services
+
+		Dependency Injection
+
+		Routing
+
+3) Differentiate between Components and Directives in Angular.
+	
+	->Components break up the application into smaller parts; whereas, Directives add behavior to an existing DOM element. 
+
+4) What is the use of @Input and @Output? 
+	
+	->When it comes to the communication of Angular Components, which are in Parent-Child Relationship; we use @Input in Child Component when we are passing data from Parent to Child Component and @Output is used in Child Component to receive an event from Child to Parent Component. 
+
+5) What is Routing in Angular 5?
+	
+	->Routing helps a user in navigating to different pages using links.
+
+6) Explain the usage of {{}}?
+	
+	->It represent data from a component
+	->It's call interpolation
+
+7) In how many ways the Data Binding can be done?
+
+	->Data Binding happens between the HTML (template) and typescript (component). Data binding can be done in 3 ways:
+
+	(i) Property Binding (ii) Event Binding (iii) Two-Way Data Binding. 
+
+8) How is SPA (Single Page Application) technology different from the traditional web technology?
+	
+	-> In traditional web technology The problem here is a lot of time is consumed in the requesting/responding or due to a lot of reloading.
+	->Whereas, in the SPA technology, we maintain only one page (index.HTML) even though the URL keeps on changing. 
+
+9)  What is Component in Angular Terminology? 
+
+	->A web page in Angular has many components involved in it. A Component is basically a block in which the data can be displayed on HTML using some logic usually written in typescript. 
+
+10) What are ngModel and how do we represent it? 
+	
+	->ngModel is a directive which can be applied on a text field. This a two-way data binding. ngModel is represented by [()] 
+
+11) What are the Pipes?
+	
+	->Is used to change the output on the template.
+	
+	Ex. changing the string into uppercase. 
+		It can also change Date format accordingly. 
+
+
+GSAP:
+	
+1) What is gsap?
+	
+	-> The GreenSock Animation Platform (GSAP) is a JavaScript library for building animations on the web.
+	-> Anything you see in your web browser can be animated with GSAP. (Html elemets, svg, pseudo elements, ect.)
+	-> Some packages of this library is paid like DrawSVG, MorphSVG, etc.
+	-> https://greensock.com/docs/
+
+2) How to use GSAP?	
+
+	-> We just need to add it's core gsap library in our project.
+	-> After that we can use gsap using it's from,to or fromTo methods to animate our web page elemets.
+	-> If we want to use other packages of gsap than we have to add it's file separately with gsap file
+	like ScrollTrigger, cssRule, etc.
+
+
+PageSpeed Insights :
+
+1) What is PageSpeed Insights?
+	
+	-> It is a Google tool, And it help in website's performance optimizations.
+	-> It analyzes the web pages for mobile and desktop devices then generates suggestions to make them faster.
+
+2) How to improve page speed?
+		
+	There are some key points to improve page speed:
+
+	-> Use lazy loading in images
+	-> Remove unused css/js from the page. For that use page wise css/js concept
+	-> Used optimized images (tinypng)
+	-> Better to use webp(Web Picture) image formate, etc.
+
+3) Any other tool you know ?
+
+	-> Yes, there are many tools to see web page performance report
+	1. GTmetrix
+	2. Pingdom 
+	3. Webpage Test
+
+	-> I have not used other tools but may be other tools are paid.
+
+
+ADA Compliance :
+
+1) ADA(Americans with Disabilities Act) or What is web accessibility?
+	
+	-> Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.
+
+	-> To add more details we can add area attribute to the our html document.
+
+	What is aria?
+
+		-> ARIA is shorthand for Accessible Rich Internet Applications. 
+		-> ARIA is a set of attributes, that define more information about our html element when people visit our web page with screen reader.
+
+2) Key points for ADA?
+	
+	-> Always use lable with every form elements(input,textarea,select,etc.). if there is no content than make it dispaly:none;
+	-> Always use alt attribute with some meaningfull title with img tag
+	-> Always use title tag with anchor or button tag
+	-> Use heading tag's in descending order(h2>h3>...>h6). etc.
+
+3) Tools to check ADA Compliance.	
+	
+	->https://achecker.achecks.ca/checker/index.php
+	->https://wave.webaim.org/
+
+
+Git:
+	
+1) What is git?	
+	
+	-> Git is a distributed version control system.
+  	-> It' s system that records changes to our files over time.
+  	-> We can recall any specific version of those files at any time.
+  	-> many people can easily collaborate on single project.
+
+  	-> git ni file read karvi
+
+
+Common:
+
+0) Why are you so confused?
+	
+	->
+
+1) Tell me about your self.
+	
+	->Sure sir/madam. First of all, thank you for shortlisting me for this interview. My name is Alpesh Baraiya and currently, I am living in Bhavnagar. I have completed my bachelor's degree in computer engineering from GEC Bhavnagar in the year 2019. And since then I have been working as a UI developer at Tatvasoft. I am a quick learner and a good team player. I am always ready to take new challenges required to perform better.
+
+	My specialization is to determine the structure and design of web pages with reusable code that enhances site performance.
+
+	- My strength
+
+		-> strength decide the capability of a person.
+
+		-> Punctual
+		-> Quick learner
+		-> Always ready to take new challanges
+		-> A good team player
+		-> A positive attitude
+		-> Supportive
+		-> Interest in Helping Others
+
+	- My skills	
+
+		-> Skills means what technical knowledge I have.
+
+		-> Html, CSS, Responsive Design,Bootstrap, Git, SCSS, JavaScript, JQuery, ADA compliance, PageSpeed Insights, GSAP, Angular, React.
+
+2) In your work experience, what have you done that you consider truly creative?
+	
+	-> In the e-tatvasoft project I have created spotlight effect background
+	-> In the candit project I have created steps section using gsap
+	-> In the scholastic projects I have created SVG animations
+
+3) Why do you leave your last job?
+	
+	-> For better career growth opportunities and professional growth.
+
+4) Why did you decide to apply to this role?
+	
+	-> I really think I'm a good fit for the job and can grow even more in your workplace.
+
+5) What is the most difficult situatoion you faced at work?
+	
+	-> I take every new task or responsibility of my job as a challenge and then try to give my best so, till now I didn't face any difficult situation.
+
+6) What you like and dislike of your previous industry?
+	
+	->
+
+7) What are your salary expectations?
+	
+	-> I think I would expect this role to pay between 40k and 42k.
+
+8) What are your future plans?	
+	
+	-> personal goals: 
+	-> professional goals:
+
+1) how you find zealousweb?
+	
+	-> Yes sir so, One day I just looked into LinkedIn and zealous web is on my suggestions list, then I search for zealous web on google and saw a review in google and glassdoor and I found it interesting it and then I just go to the career page of zealous web and I found an opportunity and without wasting time I just applied it
+
+	-> Founded: 2003
+	-> Web Development, Mobile Applications, Microsoft, Digital Marketing and Consulting.
+
+2) What you found interesting about company?	
+	
+	-> Peapole's review about zealous web, like
+
+	pros:
+
+		- A friendly environment where everybody helps each other.
+		- 5 days a Week
+		- Flexibility to learn new things
+		- Flexible work timing so you can prioritize your work-life balance.
+
+	cons: 
+
+		- I dont find any major cons but one is there is no permenant work from home.
+
+3) Why are you not coming to ahmedabad?	
+	
+	-> Sir, I have to come to Ahmedabad but here continuously raining for the last 4 days. So, Whenever I get the chance I will come to Ahmedabad.
+
+4) negotiation
+	
+	- No sorry ma'am below 40k I will not able to negotiate
+
+5) What is your job in previous industry?	
+	
+	-> My job in previous industry is to determine the structure and design of web pages with reusable code that enhances site performance.
+
+
+Dear Sir/Ma'am, Your description of the work responsibilities for the Front End Developer role closely matches my experience, and so I am excited to submit my resume to you for your consideration. Thank you
+
+
+Hello ma'am, sorry to say but for my financial reasons, I will not be able to join
+

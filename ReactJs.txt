@@ -1,0 +1,509 @@
+-> koi pn component j tag banvano che eno first letter always capital j rakhvo
+
+strandars:
+
+https://docs.google.com/document/d/12mcY4emqVyxU9YIh4uB5HFQTRoA8HRBYDov3wY1bm8I/edit#heading=h.2p64sc7i374
+
+Note: 
+	
+	-> Koi custom Component import kriye tyare enu name no first letter capital j rakhvo ny to data show ny thay
+
+step 1- Install NodeJs
+step 2- Install React from terminal
+
+	npm i -g create-react-app
+
+	create-react-app --version
+
+	create-react-app "project_name"
+	cd project_name
+	npm start
+
+	OR
+
+	npx create-react-app my-app
+	cd my-app
+	npm start
+
+	-> create-react-app is a tool develop by react developer. ana use karvathi aapdne bdhu bethu setup mali jay...jate bdhu n karvu pde
+
+	OR
+
+	npm init react-app my-app
+
+
+
+*When and Why we use .js and .tsx extension*
+	
+	->
+
+
+*What is npm and npx *
+	
+	1) npm : 
+
+		->stand for node package manager
+		->Using npm we can install any packages in our local machine
+		->package used by npm are installed globally
+		->it is automatically installed when we install node.js in our system and we can also install it separatly using
+			npm install
+
+	2) npx : 
+
+		->stand for node package execute
+		->is mostly used to execute scripts located in ./node_module/bin
+		->
+
+*JSX* 
+	
+	-> stands for javascript extension or javascript XML
+	-> to use JSX code must need to import REACT module.
+	-> aapde ReactDOM ni render method ma j html code kriye e actually ma JSX code che...ane babel ene html ma convet kre che using REACT module
+
+
+*redux and contex diff*
+
+	-> normally banne application no data store karva mate use thay.
+	-> for an example apdi site ma 4 component che 
+		header -> sidebar -> main content -> footer
+		hve koi user or koi bija component ma main content no data ni jarur pdi to jo redux no use karyo to e su karse hierarchy follow karse... directly main content no data ny aape....jyare contex hook api no use kri ne aapde main content no data or property directly use kri sakiye.
+
+		OR
+
+	-> 2 or vdhare component vachche communicate karva mate use thay em pn kai sakiye.
+
+	ex.- koi ecommerce ni site ma main-content na component mathi koi vastu cart ma add kri to have ene related change cart na component ma pn karva pde to e bdhu karva mate redux and contex no use thay
+
+
+	=>contex:
+
+		->React hooks provide a concept call contex. 
+		means koi hierarchy che ex. A->B->C->D to hve aapde A parent ni koi property ne khali D child ma j use karvi hoy to eva case ma contex hook no use thay.
+		->React contex API allows us to easily access data at different level of the component tree. without passing prop to every level.
+
+		->there are three steps to create a contex:
+
+			1) createContext() : create a contex
+			2) provider : bija use kri sake etle ene provide karvu
+			3) consumer : provider ma data provide thto hoy tene consume(leva) mate
+
+	
+	=>redux:
+
+		->A->B->C->D to hve aapde A parent ni koi property ne khali D child ma j use karvi hoy to redux su karse k pela e B ma jse pasi C ma pasi D ma use kri sakisu.
+
+
+*yarn and npm*
+	
+	=>yarn:
+
+		-> yarn is package manager same as npm
+		-> yarn is developed by facebook
+		-> yarn is faster than npm on your local server
+		-> yarn ma node_module(or koi pn biju package) delete kri ne install kro to peli var karta ocho time biji var lagse km k t packages ne cache ma store rakhe cache and etle biji var net bandh rakhi ne pn packages install kri sakisu
+
+	=>npm:
+
+		-> npm is faster than yarn on your production server
+		-> npm ma node_module(or koi pn biju package) delete kri ne install kro to jetlo peli var time lagyo etlo j time biji var lagse.
+		-> npm ma ek ne ek packages gme etli var install kriye..darek vakht e net ni jarur padse
+
+
+* use multiple elements in one render method *
+	
+	-> React render method only return one single element so, we have to wrap our all component into one single div.
+	-> we can wrap all element in one single div OR in REACT version 16.*.* or above we can set it an array
+
+		ex.- [
+				<h1> hi </h1>,
+				<p> Alpesh </p>,
+			] 
+				OR
+
+			<div>
+				<h1> hi </h1>
+				<p> Alpesh </p>
+			</div>
+
+			OR jo extra div add n karvo hoy to
+
+			<React.Fragment>
+				<h1> hi </h1>
+				<p> Alpesh </p>
+			</React.Fragment>
+
+			OR
+
+			<>
+				<h1> hi </h1>
+				<p> Alpesh </p>
+			</>
+
+
+
+*How to do Inline css *
+	
+	-> In react class keyword is already register with another functionality so to add a class in any tag we have to use a keyword * className *
+
+	=>Inline style :
+
+		<p
+
+		style = {{color : 'red'; textTrabsform: 'normal'}}
+
+		> Alpesh </p>
+
+		OR
+
+		const pragraph = {
+			color : 'red',
+			textTrabsform: 'normal',
+		}
+
+		<p style = {pragraph} > Alpesh </p>
+
+
+* There are two type of export and import *
+
+	1) Default export:
+
+		->koi function ne default export krelu hoy tyare tene import karvu hoy to
+		->ek file ma ek thi vdhare default export add n kri sakiye
+
+		import Button from '@material/core/Button';
+
+	2) Named export:
+
+		->koi function ne name export krelu hoy tyare tene import karvu hoy to
+		->we can add muliple named export in single js file.
+
+		import { Button } from '@material/core';
+
+
+* kebab case and camel case *
+	
+	-> In react internal styles we need to convert kebab case into the camel case
+	 ex.- 
+	 	text-transform: normal.....kebab case
+	 	textTrabsform: normal......camel case
+
+
+
+* Material UI *
+
+=>instalation :
+
+	npm install @material-ui/core
+
+	->Please note that react >= 16.8.0 and react-dom >= 16.8.0 are peer dependencies.
+
+=> Material Icon :
+	
+	npm install @material-ui/icons
+
+	->We can use material icon in three way
+
+		1) Material design icon
+
+			->This way it provide a icon as a svg code
+
+			->How to use:
+
+				import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+				import ThreeDRotation from '@material-ui/icons/ThreeDRotation';
+
+				 OR
+
+				import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
+
+				ex.- 
+
+				<AccessAlarm />
+				<AccessAlarm color="primary" />
+				<AccessAlarm color="secondary" />
+				<AccessAlarm color="action" />
+				<AccessAlarm color="disabled" />
+				<AccessAlarm style={{ color: green[500] }} />
+
+		2) SvgIcon	
+
+			->If you need a custom SVG icon (not available in the Material Icons default set) you can use the SvgIcon wrapper
+
+			->How to use:
+
+				<SvgIcon {...props}>
+			      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+			    </SvgIcon>
+
+		3) Icon (Font icons)
+
+			->Font-family vala icon use karva hoy to
+
+			->How to use:
+
+				<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+					->Add above file in your index.html
+
+				import Icon from '@material-ui/core/Icon';
+
+				ex.- 
+
+				<Icon>star</Icon>
+
+
+=>How to styles an elements in react app :
+	
+	->Apde koi pn normal web app ma style kriye e rite react ma pn koi .css file create krine style lakhi sakiye ane e style file ne jya use krvi che tya just import karvi
+
+		ex.-
+
+			style.css
+
+				.root{
+					backgroud-color: red,
+					padding: 10px, OR
+					padding: 10,
+				}
+
+			app.js
+
+				import './style.css';
+
+				import React from 'react';
+
+				export default function App() {
+
+				    return (
+				      <div className="root">
+				        
+				      </div>
+				    );
+
+				}	
+
+	->But in almost all react app when we use material ui we will be using the *jss syntax* to define css.
+
+		->Official documentation:
+
+			https://cssinjs.org/from-sass-to-cssinjs
+
+		->basically it allow us to define these css rule with the help of javascript.
+		->to use this we have to install some of the plugins for that but when we create our react app some packages are default installed in our node_module file and you can check it with starting name *jss-plugin-*.
+		->these packages allow us to work with jss syntax in our react app.
+
+		->Let's see how to write jss syntax in our component file:
+
+			ex. - 
+
+				const useStyles{
+				  root:{
+				    backgroudColor: 'red',
+					padding: '10px',
+				  }
+				}	
+
+				-> this is how we define css with jss syntax:
+				-> now we have to convert this to it's original syntax. To do this convertion there two methods in material ui
+
+				1) makeStyles :
+
+					import { makeStyles } from "@material-ui/core";
+
+					const useStyles = makeStyles({
+
+					  root:{
+					    backgroudColor: 'red',
+						padding: '10px',
+					  }
+
+					});
+
+
+					export default function App() {
+
+						const classes = useStyles();
+
+					    return (
+					      <div className={classes.root}>
+					        
+					      </div>
+					    );
+					}
+
+					->here *useStyle* is a constant object....aapde koi pn name rakhi sakiye
+
+				2) withStyles :
+
+					import { withStyles } from "@material-ui/core";
+
+					const useStyles = {
+					  root:{
+					    backgroudColor: 'red',
+						padding: '10px',
+					  }
+					}
+
+
+					const App = (props) => {
+
+						const {classes} = props;
+
+					    return (
+					      <div className={classes.root}>
+					        
+					      </div>
+					    );
+					}
+
+					export default withStyles(useStyle)(App);
+
+
+					->here *useStyle* is a constant object....aapde koi pn name rakhi sakiye
+
+
+=>How to reset css in react app :
+
+	-> aa add karvathi amuk basic reset css add thse jm k box-sizing, body ne margin:0, etc.
+
+		ex.-
+		->add it in you main app.js component
+
+		import { CssBaseline } from "@material-ui/core";
+
+		<CssBaseline />
+
+
+=>Component customization :
+	
+	->We can customization component using two way in material ui:	
+
+		1)className attribute :
+
+			->It is same as *How to styles an elements in react app*
+
+
+		2)classes attribute :
+
+			->Material ui na koi component no to aapde easily class api sakiye but...e component jyare html ma render thse tyare jo eni andar bija extra div or koi bija tag auto generate thta hoy to tene class aapva mate aa method no use thay che
+
+			ex. - 
+
+				import { makeStyles } from "@material-ui/core";
+				import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+
+				const useStyles = makeStyles({
+
+				  btnWapper:{
+				    backgroundColor:'red'
+				  },
+				  btnInner:{
+				    backgroundColor:'green'
+				  },
+
+				});
+
+
+				export default function App() {
+
+					const classes = useStyles();
+
+				    return (
+
+				      <IconButton classes={{root:classes.btnWapper,label:classes.btnInner}}>
+                		<AccessAlarmIcon />
+                	  </IconButton>
+
+				    );
+				}	
+
+				where, root = j tag ni pasal -root lagtu hse ene lagse
+					   label = j tag ni pasal -label lagtu hse ene lagse
+
+				o/p: https://prnt.sc/1098087
+
+				*note : 
+
+					->aa method thi khali class define karya hoy ane css n lakhi hoy to class pn html ma show ny kre.
+
+
+=> Customization of Material ui theme :
+	
+	ex.-
+
+		import { createMuiTheme } from "@material-ui/core/styles";
+
+		const fontSize = 16; // px
+		const htmlFontSize = 16; // 16px is the default font-size used by browsers.
+		const coef = fontSize / 14;
+
+		export const theme = createMuiTheme({
+		  palette: {
+		    primary: {
+		      light: "#a2d045",
+		      main: "#8bc517",
+		      dark: "#618910",
+		      contrastText: "#ffffff",
+		    },
+		    secondary: {
+		      light: "#6e7b86",
+		      main: "#4A5A68",
+		      dark: "#333e48",
+		      contrastText: "#ffffff",
+		    },
+		    text: {
+		      primary: "#474747",
+		      secondary: "#4c5b68",
+		    },
+		    primaryDarkGrey: {
+		      light: "#6f7b86",
+		      main: "#4c5b68",
+		      dark: "#353f48",
+		      contrastText: "#ffffff",
+		    },
+		  },
+		  typography: {
+		    fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+		    pxToRem: (size) => `${(size / htmlFontSize) * coef}rem`,
+		    h1:{
+		      fontSize: "24px",
+		      fontFamily: "'Montserrat', sans-serif",
+		      textTransform:"uppercase",
+		      lineHeight:"1.2",
+		      color: colors.orange,
+		      fontWeight:"700",
+		      marginBottom:"15px"
+		    },
+		    h2: {
+		      fontSize: "32px",
+		      lineHeight: "40px",
+		      fontWeight: "bold",
+		      letterSpacing: "-0.22px",
+		    },
+		    h6: {
+		      fontSize: "16px",
+		      lineHeight: "24px",
+		      fontWeight: "normal",
+		      letterSpacing: "0.1px",
+		    },
+		    subtitle1: {
+		      fontSize: "16px",
+		      lineHeight: "24px",
+		      fontWeight: "normal",
+		      letterSpacing: "0.1px",
+		    },
+		    body1: { fontSize: 14, lineHeight: 1.57, fontWeight: "normal" },
+		    gutterBottom: { marginBottom: 16 },
+		  },
+		});
+
+	=> uparni bdhi style ne apdi app ma apply krav bdha component ne jya merge karya hoy eni wrap karto ek div levo and niche mujab theme provide karvi
+
+		<ThemeProvider theme={theme}>
+			<App />
+		</ThemeProvider>
+
+
+
+
+		

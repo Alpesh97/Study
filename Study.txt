@@ -1,0 +1,159 @@
+ Wordpress contact form rules:
+1) use tyep:email for email, number for phone
+2) don't target form class, don't target class name of input...use input[type=".."] for css
+3) error and success msg ni design kri j devi
+
+tatvauk rewamp mathi gulp and setup copy levu
+
+1) img tag and bg-image mate webp nu example demo tatva-com mathi levo
+
+custom modal demo
+
+73199718 -Confi -- Alpesh
+35665367 -Confi -- Bhavu
+
+9/16*100 = 56.25%
+
+..vulnarebility vali error ave to aa code run karvo:
+delete node_modules
+delete package-lock.json,
+run-> npm --depth 9999 update
+run-> npm install
+
+ctrl + alt + end =>change window password
+
++919825001002...sms enabled
+
+vaishvi.shah
+tatva2197
+
+Tatva@2311
+
+to detect IE
+var ua = window.navigator.userAgent;
+var isIE = /MSIE|Trident/.test(ua);
+
+if ( isIE ) {
+  jQuery("html").addClass("ie");
+}
+
+
+SEO things:
+
+1) anchor blank n rakhvo..aakha block ne anchor thi wrap kri levu
+2) Do not use Heading tag(h1 to h6) in header, footer and sidebar
+3) use lable for every input...if lable is not available than make it d:none
+4) add title attr with every anchor tag
+5) add proper alt with img tag
+6) banner mate jpg image j use karvi
+7) icon svg or png
+8) background mate jpg  j use karvi
+9) banner hammesha padding-bottom % ma aapi ne set karvu
+10) input field search sathe search no icon hoy to ene as a button ma levo
+11) input field ma top bottom ni spacing mate paddig n apvu safari ma and iphone ma issue kre che
+
+=> border vala box ma equal height apvi hoy to andar na div ne equal height apvi and bar na div ne padding ne evu aapvu
+
+
+Learning...
+
+=> Javascript sikhine ena mate apply karvu
+
+=> codepen na deno sarkha karva
+
+=>>Source tree, github, angular
+
+=> photoshop
+=> print media
+
+=> different between loss-less and losy in image conversion
+
+=>starter files bdhi githup pr upload karvi
+=>content ne wrao karvani codepen
+=>javascript debugging... 
+
+=>nested srollspy demo
+
+=>list to dropdown demo
+=> slick ni js and css mathi unused remove karvi...same as bija koi regular used plugin mate
+=>Gsap and scroll magic mate notes bnavvi
+
+=>ADA complience book
+=>tabindex ni note
+=>codepen demo for radio button mouse select and tabindex
+=> custom model demo...bdha j senario ma
+
+=>Book read app
+=>Find your relateble website
+=>Live youtube chanle info
+
+gulp error console ma show kre evu karvu
+
+
+/* photoshop */
+shivu@2711
+->trim alt+i+r
+->ctl+alt+i(to check image ratio)
+-> alt+bachspace( to fill bg-color for layer)
+-> ctrl+bachspace( to fill fg-color for layer)
+
+=>wamp local through bija pc ma access mate apache ni 2 files ma changes karva and window defender firewall off kri pc restart karvu
+
+/* slick-slider */
+
+slideToShow:1.5 aa rite floating number thi use karvu hoy to sathe  
+*Infinite:false* aapvu...ny to proper show ny thay
+
+
+=>>lightbox no demo and notes
+=>>classCounting(Reedhdhi pase thi sikhvu   (https://www.tatvasoft.com.au/)........Industries We Serve
+ na slick slider mate)
+
+
+if (event.target !== this) (click event li pr hoy but click khali arrow pr j karva dese)  http://202.131.123.194:81/team4/schooliseasy/
+  return;
+
+aanu jovu responsive menu mate
+
+=>Javascript only accept the milisecond value...not second value...etle j aapd ebdhi jagyayre 1000 ne evi properti aapiye chiye
+=>J div ne height calc ma or fix aapi ne overflow aapi hoy ene padding bottom ny aapvu ny to firefox ma issue thse...eni andar na ne aapvu
+=> transform-box:fill-box .....................property
+=> iframe ma css mate iframe na src ma css path aapvo pde and iframe ni media mate iframe ni anadar j body bane eni width parthi max-width count kri media aapvi main bocy ni media thi ny.
+
+Photoshop
+=>trim->alt+i+r
+=> show grid-> ctrl + '
+=>export->alt+ctrl+shift+w
+=>zoom in or out->ctrl+0
+=>pick color->i
+
+************
+banner mate jpg image j use karvi
+icon svg or png
+
+background mate jpg  j use karvi
+
+jo svg image provide kreli hoy to e j use karvi
+
+banner hammesha padding-bottom % ma aapi ne set karvu
+**************
+darek form ma input ni pela label rakhvu j...bhale d:none rakvu pde  
+darek anchor ma title add karvu
+darek img ma alt add karvu,case study mobile images
+
+
+VAISHVI NI PARTY PATANG/MANGO/NINI'S KITCHEN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
