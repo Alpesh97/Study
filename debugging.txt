@@ -1,0 +1,19 @@
+*** Debug mobile devices with desktop ***
+
+Android: https://developer.chrome.com/docs/devtools/remote-debugging/
+
+1) Turn on debugging mode in your settings
+2) Connect your device with USB to desktop
+3) chrome://inspect/#devices
+   -> copy paste above url into your desktop chrome browser
+4) Open chrome browser in your mobile device
+5) Then you will see the list of opened tabs of mobile chrome into your desktop chrome
+
+
+iPhone: https://stackoverflow.com/questions/11262236/ios-remote-debugging
+
+1) settings > safari > advanced
+   -> turn on web inspector
+2) Connect your iPhone to mac device and give permission for USB
+3) Open safari browser into your desktop device and mobile device
+4) In desktop desktop open the developer menu and chose the site from your iDevice (its at the top Safari Menu)
